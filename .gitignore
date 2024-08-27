@@ -163,6 +163,7 @@ cython_debug/
 
 # Spider Datasets
 data/spider/*
+!data/spider/readme.txt
 
 # Result
 results.sql
@@ -170,3 +171,11 @@ results_without_values.sql
 
 # Preprocessed
 dev-preprocessed.json
+
+# Converted
+data/converted/*
+!data/converted/readme.txt
+
+# Extracted
+data/extracted/*
+!data/extracted/readme.txt
