@@ -35,7 +35,9 @@ def is_translatable(text, sql_keywords):
     Returns:
         bool: True if the text is translatable, False otherwise.
     """
-    if not text or text.isspace() or text.lower() in sql_keywords:
+    if not text or text.isspace():
+        return False
+    if sql_keywords is not None and text.lower() in sql_keywords:
         return False
     if text.isdigit() or re.match(r'^[^\w\s]+$', text):
         return False
@@ -201,8 +203,8 @@ def translate_and_save(csv_filename, column_names, sql_keywords=None):
         
         print("Translation completed. Output saved as:", output_filename)
         
-        print("Waiting for 60 seconds to avoid Google Translate API rate limits...")
-        time.sleep(60)  # Wait for 60 seconds to avoid Google Translate API rate limits
+        print("Waiting for 75 seconds to avoid Google Translate API rate limits...")
+        time.sleep(75)  # Wait for 60 seconds to avoid Google Translate API rate limits
     
     except Exception as e:
         print(f"An error occurred while processing the file: {e}")
@@ -235,7 +237,7 @@ def auto_translate(file_column_pairs):
             translated_filenames = []
 
             for split_filename in split_filenames:
-                translate_and_save(os.path.basename(split_filename), column_names, sql_keywords)
+                translate_and_save(os.path.basename(split_filename), column_names, None)
                 translated_filenames.append(f'translated_{os.path.basename(split_filename)}')
 
             merge_csvs(translated_filenames, 'translated_tables.csv')
