@@ -49,42 +49,40 @@ def extract_tables(json_file, output_csv):
     - json_file: Path to the input JSON file containing the data.
     - output_csv: Path to the output CSV file where the extracted data will be saved.
     
-    The output CSV file will contain two columns: 'db_id' and 'toks'.
-    Each table name or column name will be written on a new line, with the 'db_id' field only filled in once per table.
+    The output CSV file will contain three columns: 'db_id', 'column_names', and 'column_names_original'.
     """
     unique_strings = set()  # Set to store unique (db_id, token) pairs
+    
     try:
         with open(json_file, 'r', encoding='utf-8') as file:
             data = json.load(file)
 
         with open(output_csv, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(['db_id', 'toks'])  # Write the header row
+            writer.writerow(['db_id', 'column_names', 'column_names_original'])  # Write the header row
 
             for table in data:
                 db_id = table['db_id']  # Extract the database ID
                 first_token = True  # Flag to check if it's the first token for this table
 
                 # Extract and write column names
-                for column_name in table['column_names']:
+                for i, column_name in enumerate(table['column_names']):
                     token = column_name[1]  # Extract the column name string
-                    if (db_id, token) not in unique_strings:
+                    token_original = table['column_names_original'][i][1]  # Extract the original column name string
+                    
+                    if (db_id, token, token_original) not in unique_strings:
                         if first_token:
-                            writer.writerow([db_id, token])
+                            writer.writerow([db_id, token, token_original])
                             first_token = False
                         else:
-                            writer.writerow(['', token])
-                        unique_strings.add((db_id, token))
+                            writer.writerow(['', token, token_original])
+                        unique_strings.add((db_id, token, token_original))
 
                 # Extract and write table names
                 for table_name in table['table_names']:
-                    if (db_id, table_name) not in unique_strings:
-                        if first_token:
-                            writer.writerow([db_id, table_name])
-                            first_token = False
-                        else:
-                            writer.writerow(['', table_name])
-                        unique_strings.add((db_id, table_name))
+                    if (db_id, table_name, '') not in unique_strings:
+                        writer.writerow([db_id, table_name, ''])
+                        unique_strings.add((db_id, table_name, ''))
 
         print(f"Extraction completed. Output saved as: {output_csv}")
 
