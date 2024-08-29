@@ -285,11 +285,11 @@ if __name__ == "__main__":
         # It's recommended to comment out the file_column_pairs you don't want to translate first
         # before running the script to avoid timeouts.
         file_column_pairs = {
-            # 'dev.csv': ['db_id', 'query_toks', 'question'],
-            # 'train_others.csv': ['db_id', 'query_toks', 'question'],
-            # 'train_spider.csv': ['db_id', 'query_toks', 'question'],
-            # 'tables.csv': ['db_id','toks']
-            'tables_3.csv': ['db_id', 'toks'],
+            'dev.csv': ['db_id', 'query_toks', 'question'],
+            'train_others.csv': ['db_id', 'query_toks', 'question'],
+            'train_spider.csv': ['db_id', 'query_toks', 'question'],
+            'tables.csv': ['db_id','toks']
+            # 'tables_3.csv': ['db_id', 'toks'],
             # 'train_spider_1.csv': ['db_id', 'query_toks', 'question'],
             # 'train_spider_2.csv': ['db_id', 'query_toks', 'question'],
             # 'train_spider_3.csv': ['db_id', 'query_toks', 'question'],
