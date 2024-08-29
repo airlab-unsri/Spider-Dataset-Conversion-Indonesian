@@ -17,7 +17,7 @@ Cleaning task:
 4. Make lowercase for all db_id_id and toks_id
 
 Remember to use absolute path.
-script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     csv_filepath = os.path.join(script_dir, '../data/extracted/', csv_filename)
 
 Generate new file:
@@ -62,6 +62,40 @@ def clean_toks_id(toks_id):
         
     return toks_id
 
+def clean_column_names(column_names):
+    if isinstance(column_names, str):
+        column_names = column_names.lower().strip()
+        # Check for "identitas" or "id" patterns
+        if "identitas" in column_names:
+            column_names = column_names.replace("identitas", "").strip()
+            column_names = f"id {column_names}"
+        elif "id" in column_names and column_names.split()[0] != "id":
+            column_names = column_names.replace("id", "").strip()
+            column_names = f"id {column_names}"
+        # Remove trailing underscores
+        column_names = column_names.rstrip("_")
+        # Replace "name" with "nama"
+        column_names = column_names.replace("name", "nama")
+        
+    return column_names
+
+def clean_column_names_table(column_names_table):
+    if isinstance(column_names_table, str):
+        column_names_table = column_names_table.lower().strip()
+        # Check for "identitas" or "id" patterns
+        if "identitas" in column_names_table:
+            column_names_table = column_names_table.replace("identitas", "").strip()
+            column_names_table = f"id {column_names_table}"
+        elif "id" in column_names_table and column_names_table.split()[0] != "id":
+            column_names_table = column_names_table.replace("id", "").strip()
+            column_names_table = f"id {column_names_table}"
+        # Remove trailing underscores
+        column_names_table = column_names_table.rstrip("_")
+        # Replace "name" with "nama"
+        column_names_table = column_names_table.replace("name", "nama")
+        
+    return column_names_table
+
 def clean_csv(csv_filename):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     csv_filepath = os.path.join(script_dir, '../data/extracted/', csv_filename)
@@ -77,6 +111,12 @@ def clean_csv(csv_filename):
     
     if "toks_id" in df.columns:
         df["toks_id"] = df["toks_id"].apply(clean_toks_id)
+    
+    if "column_names" in df.columns:
+        df["column_names"] = df["column_names"].apply(clean_column_names)
+        
+    if "column_names_table" in df.columns:
+        df["column_names_table"] = df["column_names_table"].apply(clean_column_names_table)        
     
     # Generate cleaned CSV file
     cleaned_csv_filename = f"cleaned_{csv_filename}"
