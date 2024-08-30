@@ -13,7 +13,6 @@ def extract_query_toks_and_question(json_file, output_csv):
     The output CSV file will contain three columns: 'db_id', 'query_toks', and 'question'.
     Each query token will be written on a new line, with the 'db_id' and 'question' fields only filled in once per query.
     """
-    unique_query_toks = set()  # Set to store unique (db_id, token) pairs
     try:
         with open(json_file, 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -28,13 +27,11 @@ def extract_query_toks_and_question(json_file, output_csv):
 
                 first_token = True  # Flag to check if it's the first token in the query
                 for token in item['query_toks']:
-                    if (db_id, token) not in unique_query_toks:
-                        if first_token:
-                            writer.writerow([db_id, token, question])
-                            first_token = False
-                        else:
-                            writer.writerow(['', token, ''])
-                        unique_query_toks.add((db_id, token))
+                    if first_token:
+                        writer.writerow([db_id, token, question])
+                        first_token = False
+                    else:
+                        writer.writerow(['', token, ''])
 
         print(f"Extraction completed. Output saved as: {output_csv}")
 
