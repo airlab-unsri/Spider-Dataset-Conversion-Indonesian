@@ -290,7 +290,7 @@ if __name__ == "__main__":
             # 'dev.csv': ['db_id', 'query_toks', 'question'],
             # 'train_others.csv': ['db_id', 'query_toks', 'question'],
             # 'train_spider.csv': ['db_id', 'query_toks', 'question'],
-            'tables.csv': ['db_id', 'column_names', 'column_names_original']
+            'tables.csv': ['db_id', 'column_names', 'column_names_original', 'table_names', 'table_names_original']
             # 'tables_3.csv': ['db_id', 'toks'],
             # 'train_spider_1.csv': ['db_id', 'query_toks', 'question'],
             # 'train_spider_2.csv': ['db_id', 'query_toks', 'question'],

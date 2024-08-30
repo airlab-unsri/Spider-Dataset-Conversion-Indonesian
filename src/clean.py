@@ -88,6 +88,8 @@ def clean_column_names_id(column_names_id):
         column_names_id = column_names_id.rstrip("_")
         # Replace whitespaces with underscores
         column_names_id = column_names_id.replace(" ", "_")
+        # Replace double underscores with underscores
+        column_names_id = column_names_id.replace("__", "_")
         # Transform ID patterns
         column_names_id = transform_id_patterns(column_names_id)
         
@@ -107,6 +109,8 @@ def clean_column_names_original_id(column_names_original_id):
         column_names_original_id = column_names_original_id.rstrip("_")
         # Replace whitespaces with underscores
         column_names_original_id = column_names_original_id.replace(" ", "_")
+        # Replace double underscores with underscores
+        column_names_original_id = column_names_original_id.replace("__", "_")
         # Transform ID patterns
         column_names_original_id = transform_id_patterns(column_names_original_id)
         
