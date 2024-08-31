@@ -179,7 +179,7 @@ data/converted/spider/*
 # Push Converted Datasets
 !data/converted/spider/dev.json
 !data/converted/spider/tables.json
-!data/converted/spider/train_combined.json
+!data/converted/spider/train.json
 !data/converted/spider/train_spider.json
 !data/converted/spider/train_others.json
 
