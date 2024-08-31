@@ -131,7 +131,7 @@ def tokenize_without_spaces(s):
     Returns:
         list: A list of tokens split by alphanumeric characters and specific punctuation.
     """
-    return re.findall(r"[A-Za-z0-9_]+|[.,?]", s)
+    return re.findall(r"[A-Za-z0-9_]+|[.,?()]", s)
 
 def normalize_query_string(query):
     """
@@ -160,36 +160,63 @@ def generate_query_toks_no_value(query_toks, original_query_toks_no_value):
         list: List of tokens with patterns replaced by 'value' as needed.
     """
     tokens_no_value = []
+    i = 0
+    while i < len(query_toks):
+        tok = query_toks[i]
 
-    def is_value_token(tok):
-        """
-        Determine if a token should be replaced with 'value'.
+        def is_value_token(tok):
+            """
+            Determine if a token should be replaced with 'value'.
 
-        Parameters:
-            tok (str): The token to check.
+            Parameters:
+                tok (str): The token to check.
 
-        Returns:
-            bool: True if the token matches 'value' replacement patterns, False otherwise.
-        """
-        if tok in ["``", "''"]:
-            return True
-        if re.match(r"'{[^}]*}'|'{[^}]*}|'{[^}]*}|'{[^}]*}|'{[^}]*}|'{[^}]*}", tok):
-            return True
-        if re.match(r'^[0-9]+(\.[0-9]+)?$', tok):  # Numeric or floating-point values
-            return True
-        return False
+            Returns:
+                bool: True if the token matches 'value' replacement patterns, False otherwise.
+            """
+            # Check for quoted values (e.g., 'value')
+            if re.match(r"^'.*'$", tok):
+                return True
+            # Check for numeric or floating-point values
+            if re.match(r'^[0-9]+(\.[0-9]+)?$', tok):
+                return True
+            # Check for special patterns (e.g., `` or '' with certain conditions)
+            if tok in ["``", "''"]:
+                return True
+            return False
 
-    for tok in query_toks:
-        if is_value_token(tok):
+        # Handle sequences of tokens representing a value
+        if i < len(query_toks) and query_toks[i].startswith("'"):
+            combined_token = ""
+            while i < len(query_toks) and not query_toks[i].endswith("'"):
+                combined_token += query_toks[i]
+                i += 1
+            if i < len(query_toks):
+                combined_token += query_toks[i]
+            if is_value_token(combined_token):
+                tokens_no_value.append("value")
+            i += 1
+        elif is_value_token(tok):
             tokens_no_value.append("value")
+            i += 1
         elif '.' in tok:  # Further split by dot if present
             subtokens = tok.split('.')
-            tokens_no_value.extend([subtok.lower() for subtok in subtokens])
-            tokens_no_value.append('.')
+            # Check if the dot is part of a token or separates tokens
+            if len(subtokens) > 1:
+                for subtok in subtokens[:-1]:
+                    tokens_no_value.append(subtok.lower())
+                    tokens_no_value.append('.')
+                tokens_no_value.append(subtokens[-1].lower())
+            else:
+                tokens_no_value.append(tok.lower())
+            i += 1
         else:
             tokens_no_value.append(tok.lower())
+            i += 1
     
     return tokens_no_value
+
+
 
 def load_json_file(json_path):
     """

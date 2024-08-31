@@ -192,3 +192,6 @@ data/extracted/*
 !data/extracted/cleaned_translated_ext_train_others.csv
 !data/extracted/cleaned_translated_ext_train_spider.csv
 !data/extracted/cleaned_translated_tables.csv
+
+# Misc
+.VSCodeCounter/
