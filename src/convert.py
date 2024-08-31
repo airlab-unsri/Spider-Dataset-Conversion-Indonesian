@@ -145,7 +145,9 @@ def tokenize_without_spaces(s):
 
 def normalize_query_string(query):
     """
-    Normalize a query string by removing extra spaces around dots and ensuring single spaces between tokens.
+    Normalize a query string by removing extra spaces around dots, ensuring single spaces between tokens,
+    removing trailing spaces from words enclosed in single quotes, ensuring comparison operators are not
+    separated by spaces, and removing spaces before semicolons.
 
     Parameters:
         query (str): The query string to normalize.
@@ -155,8 +157,25 @@ def normalize_query_string(query):
     """
     # Remove spaces around dots
     query = re.sub(r'\s*\.\s*', '.', query)
+    
     # Ensure single spaces between other tokens
-    return " ".join(query.split())
+    query = " ".join(query.split())
+    
+    # Remove trailing spaces from words enclosed in single quotes
+    query = re.sub(r"'(.*?)\s+'", r"'\1'", query)
+    
+    # Ensure comparison operators are not separated by spaces
+    query = re.sub(r'\s*<\s*=\s*', ' <= ', query)
+    query = re.sub(r'\s*>\s*=\s*', ' >= ', query)
+    
+    # Remove spaces before semicolons
+    query = re.sub(r'\s*;\s*', ';', query)
+    
+    # Remove spaces around parentheses
+    query = re.sub(r'\s*\(\s*', ' (', query)
+    query = re.sub(r'\s*\)\s*', ') ', query)
+    
+    return query
 
 def generate_query_toks_no_value(tokens):
     new_tokens = []
@@ -290,14 +309,18 @@ def replace_values_in_json(data, translation_map, is_table=False):
             # Replace in dev, train_others, and train_spider files
             db_id = normalize_name(item['db_id'])
             item['db_id'] = translation_map['db_id'].get(db_id, item['db_id'])
+            
+            # Tokenize the query
+            # query_tokens = tokenize_string(item['query'])
+            
+            # Translate each token
+            translated_tokens = [translation_map['query_toks'].get(tok, tok) for tok in item['query_toks']]
+            
+            # Normalize and reconstruct the query ensuring single spacing
+            item['query'] = normalize_query_string(" ".join(translated_tokens))
 
             # Replace query_toks
             item['query_toks'] = [translation_map['query_toks'].get(tok, tok) for tok in item['query_toks']]
-
-            # Normalize and replace query ensuring single spacing
-            item['query'] = normalize_query_string(
-                " ".join([translation_map['query_toks'].get(tok, tok) for tok in tokenize_string(item['query'])])
-            )
 
             # Generate and replace query_toks_no_value
             # item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'], item['query_toks_no_value'])
