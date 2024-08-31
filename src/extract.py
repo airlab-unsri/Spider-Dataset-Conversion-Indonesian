@@ -1,17 +1,19 @@
 import json
 import os
 import csv
+import re
 
 def extract_query_toks_and_question(json_file, output_csv):
     """
-    Extracts query tokens and corresponding questions from a JSON file and writes them to a CSV file.
+    Extracts query tokens, query tokens with no values, and corresponding questions from a JSON file 
+    and writes them to a CSV file. Also extracts strings inside SQL that match the pattern "(.*?)" or \\"(.*?)\\".
 
     Parameters:
     - json_file: Path to the input JSON file containing the data.
     - output_csv: Path to the output CSV file where the extracted data will be saved.
     
-    The output CSV file will contain three columns: 'db_id', 'query_toks', and 'question'.
-    Each query token will be written on a new line, with the 'db_id' and 'question' fields only filled in once per query.
+    The output CSV file will contain five columns: 'db_id', 'query_toks', 'query_toks_no_value', 'question', 'sql_string'.
+    Each value will be written in its own column, with empty rows as necessary to align with the longest column.
     """
     try:
         with open(json_file, 'r', encoding='utf-8') as file:
@@ -19,24 +21,65 @@ def extract_query_toks_and_question(json_file, output_csv):
 
         with open(output_csv, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(['db_id', 'query_toks', 'question'])  # Write the header row
+            writer.writerow(['db_id', 'question', 'query_toks', 'query_toks_no_value', 'sql_string'])  # Write the header row
 
             for item in data:
                 db_id = item['db_id']  # Extract the database ID
                 question = item.get('question', '')  # Extract the question (if exists)
+                sql_strings = extract_sql_strings(item.get('sql', {}))  # Extract SQL strings
 
-                first_token = True  # Flag to check if it's the first token in the query
-                for token in item['query_toks']:
-                    if first_token:
-                        writer.writerow([db_id, token, question])
-                        first_token = False
+                query_toks = item.get('query_toks', [])
+                query_toks_no_value = item.get('query_toks_no_value', [])
+                
+                max_rows = max(len(query_toks), len(query_toks_no_value), len(sql_strings))
+                
+                for i in range(max_rows):
+                    row = []
+                    if i == 0:
+                        row.append(db_id)  # Add db_id only for the first row
+                        row.append(question)  # Add question only for the first row
                     else:
-                        writer.writerow(['', token, ''])
+                        row.extend(['', ''])  # Leave db_id and question columns empty after the first row
+                    
+                    row.append(query_toks[i] if i < len(query_toks) else '')
+                    row.append(query_toks_no_value[i] if i < len(query_toks_no_value) else '')
+                    row.append(sql_strings[i] if i < len(sql_strings) else '')
+
+                    writer.writerow(row)
 
         print(f"Extraction completed. Output saved as: {output_csv}")
 
     except Exception as e:
         print(f"An error occurred: {e}")
+
+def extract_sql_strings(sql):
+    """
+    Recursively extract strings inside SQL that match the pattern "(.*?)" or \\"(.*?)\\".
+
+    Parameters:
+    - sql: The SQL object from which to extract strings.
+
+    Returns:
+    - A list of extracted SQL strings, each on a new row.
+    """
+    extracted_strings = []
+    
+    def recursive_extract(obj):
+        if isinstance(obj, str):
+            # Match strings with double quotes at the start and end
+            if re.match(r'^".*"$', obj) or re.match(r'^\\".*\\"$', obj):
+                extracted_strings.append(obj)  # Preserve the quotes around the string
+        elif isinstance(obj, list):
+            for item in obj:
+                recursive_extract(item)
+        elif isinstance(obj, dict):
+            for key, value in obj.items():
+                recursive_extract(value)
+
+
+    recursive_extract(sql)
+    return extracted_strings
+
 
 def extract_tables(json_file, output_csv):
     """

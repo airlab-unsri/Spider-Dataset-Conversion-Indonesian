@@ -148,73 +148,54 @@ def normalize_query_string(query):
     # Ensure single spaces between other tokens
     return " ".join(query.split())
 
-def generate_query_toks_no_value(query_toks, original_query_toks_no_value):
-    """
-    Generate tokens for a query while replacing certain patterns with 'value'.
+import re
 
-    Parameters:
-        query_toks (list): List of tokens from the query.
-        original_query_toks_no_value (list): Original tokens with 'value' placeholders.
+import re
 
-    Returns:
-        list: List of tokens with patterns replaced by 'value' as needed.
-    """
-    tokens_no_value = []
+import re
+
+import re
+
+def generate_query_toks_no_value(tokens):
+    new_tokens = []
     i = 0
-    while i < len(query_toks):
-        tok = query_toks[i]
+    while i < len(tokens):
+        token = tokens[i]
+        
+        # Match patterns like "'something'", "something'", "`something`", etc.
+        if re.match(r"^(['\"`])[^'\"]+\1$", token):
+            new_tokens.append("value")
+        
+        # Match patterns like "'word", "middle", "word'"
+        elif (
+            i < len(tokens) - 2 and 
+            ((tokens[i].startswith("'") or tokens[i].startswith("`")) and tokens[i+2] == tokens[i][0])
+        ):
+            new_tokens.append("value")
+            i += 2  # Skip the next two tokens since they form the matched pattern
 
-        def is_value_token(tok):
-            """
-            Determine if a token should be replaced with 'value'.
-
-            Parameters:
-                tok (str): The token to check.
-
-            Returns:
-                bool: True if the token matches 'value' replacement patterns, False otherwise.
-            """
-            # Check for quoted values (e.g., 'value')
-            if re.match(r"^'.*'$", tok):
-                return True
-            # Check for numeric or floating-point values
-            if re.match(r'^[0-9]+(\.[0-9]+)?$', tok):
-                return True
-            # Check for special patterns (e.g., `` or '' with certain conditions)
-            if tok in ["``", "''"]:
-                return True
-            return False
-
-        # Handle sequences of tokens representing a value
-        if i < len(query_toks) and query_toks[i].startswith("'"):
-            combined_token = ""
-            while i < len(query_toks) and not query_toks[i].endswith("'"):
-                combined_token += query_toks[i]
-                i += 1
-            if i < len(query_toks):
-                combined_token += query_toks[i]
-            if is_value_token(combined_token):
-                tokens_no_value.append("value")
-            i += 1
-        elif is_value_token(tok):
-            tokens_no_value.append("value")
-            i += 1
-        elif '.' in tok:  # Further split by dot if present
-            subtokens = tok.split('.')
-            # Check if the dot is part of a token or separates tokens
-            if len(subtokens) > 1:
-                for subtok in subtokens[:-1]:
-                    tokens_no_value.append(subtok.lower())
-                    tokens_no_value.append('.')
-                tokens_no_value.append(subtokens[-1].lower())
-            else:
-                tokens_no_value.append(tok.lower())
-            i += 1
+        # Match patterns like "'", "middle", "another'", "last'"
+        elif (
+            token in ["'", "`"] and 
+            i < len(tokens) - 2 and 
+            tokens[i+2] in ["'", "`"]
+        ):
+            new_tokens.append("value")
+            i += 2  # Skip the next two tokens
+        
+        # Match patterns like standalone numbers or floating point values
+        elif re.match(r"^\d+(\.\d+)?$", token):  # Matches numerical values
+            new_tokens.append("value")
+        
+        # Handle other cases (non-values)
         else:
-            tokens_no_value.append(tok.lower())
-            i += 1
-    
-    return tokens_no_value
+            new_tokens.append(token)
+        
+        i += 1
+
+    return new_tokens
+
+
 
 
 
@@ -282,7 +263,9 @@ def replace_values_in_json(data, translation_map, is_table=False):
             )
 
             # Generate and replace query_toks_no_value
-            item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'], item['query_toks_no_value'])
+            # item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'], item['query_toks_no_value'])
+            item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'])
+
 
             # Replace question
             item['question'] = translation_map['question'].get(item['question'], item['question'])

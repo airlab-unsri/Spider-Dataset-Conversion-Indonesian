@@ -116,6 +116,16 @@ def clean_column_names_original_id(column_names_original_id):
         
     return column_names_original_id
 
+def clean_sql_string_id(sql_string_id):
+    """
+    Ensure the sql_string_id value is inside double quotes.
+    """
+    if isinstance(sql_string_id, str) and sql_string_id:
+        # Enclose the value in double quotes if not already
+        if not sql_string_id.startswith('"') and not sql_string_id.endswith('"'):
+            sql_string_id = f'"{sql_string_id}"'
+    return sql_string_id
+
 def clean_csv(csv_filename, sql_keywords):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     csv_filepath = os.path.join(script_dir, '../data/extracted/', csv_filename)
@@ -125,12 +135,18 @@ def clean_csv(csv_filename, sql_keywords):
 
     # Replace #VALUE! and #ERROR! in all columns
     df.replace({"#VALUE!": "", "#ERROR!": "="}, inplace=True)
-
-    if "query_toks_id" in df.columns and "query_toks" in df.columns:
-        df["query_toks_id"] = df.apply(lambda row: clean_query_toks_id(row["query_toks_id"], row["query_toks"], sql_keywords), axis=1)
     
     if "db_id_id" in df.columns:
         df["db_id_id"] = df["db_id_id"].apply(clean_db_id_id)
+
+    if "query_toks_id" in df.columns and "query_toks" in df.columns:
+        df["query_toks_id"] = df.apply(lambda row: clean_query_toks_id(row["query_toks_id"], row["query_toks"], sql_keywords), axis=1)
+        
+    if "query_toks_no_value_id" in df.columns and "query_toks_no_value" in df.columns:
+        df["query_toks_no_value_id"] = df.apply(lambda row: clean_query_toks_id(row["query_toks_no_value_id"], row["query_toks_no_value"], sql_keywords), axis=1)
+        
+    if "sql_string_id" in df.columns:
+        df["sql_string_id"] = df["sql_string_id"].apply(clean_sql_string_id)
     
     if "toks_id" in df.columns:
         df["toks_id"] = df["toks_id"].apply(clean_toks_id)
