@@ -74,25 +74,35 @@ def load_translation_mappings_train_dev(csv_path):
     translation_map = {
         'db_id': {},
         'query_toks': {},
+        'query_toks_no_value': {},
         'question': {},
+        'sql_string': {}
     }
     with open(csv_path, mode='r', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             db_id = normalize_name(row['db_id'])
             query_toks = row['query_toks'].strip()
+            query_toks_no_value = row['query_toks_no_value'].strip()
             question = row['question'].strip()
+            sql_string = row['sql_string'].strip()
 
             db_id_translation = row['db_id_id'].strip()
             query_toks_translation = row['query_toks_id'].strip()
+            query_toks_no_value_translation = row['query_toks_no_value_id'].strip()
             question_translation = row['question_id'].strip()
+            sql_string_translation = row['sql_string_id'].strip()
 
             if db_id:
                 translation_map['db_id'][db_id] = db_id_translation
             if query_toks:
                 translation_map['query_toks'][query_toks] = query_toks_translation
+            if query_toks_no_value:
+                translation_map['query_toks_no_value'][query_toks_no_value] = query_toks_no_value_translation
             if question:
                 translation_map['question'][question] = question_translation
+            if sql_string:
+                translation_map['sql_string'][sql_string] = sql_string_translation
 
     print("Loaded train/dev translation map:", translation_map['db_id'])
     return translation_map
@@ -148,14 +158,6 @@ def normalize_query_string(query):
     # Ensure single spaces between other tokens
     return " ".join(query.split())
 
-import re
-
-import re
-
-import re
-
-import re
-
 def generate_query_toks_no_value(tokens):
     new_tokens = []
     i = 0
@@ -195,10 +197,6 @@ def generate_query_toks_no_value(tokens):
 
     return new_tokens
 
-
-
-
-
 def load_json_file(json_path):
     """
     Load JSON data from a file.
@@ -211,6 +209,45 @@ def load_json_file(json_path):
     """
     with open(json_path, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+def extract_sql_strings(sql):
+    extracted_strings = []
+    
+    def recursive_extract(obj):
+        if isinstance(obj, str):
+            if re.match(r'^"[^"]*"$', obj):  # Match strings enclosed in double quotes
+                extracted_strings.append(obj)
+        elif isinstance(obj, list):
+            for item in obj:
+                recursive_extract(item)
+        elif isinstance(obj, dict):
+            for key, value in obj.items():
+                recursive_extract(value)
+                
+    recursive_extract(sql)
+    # print("Extracted SQL strings:", extracted_strings)  # Debugging line
+    return extracted_strings
+
+def extract_and_replace_sql_strings(sql, translation_map):
+    def recursive_extract_and_replace(obj):
+        if isinstance(obj, str):
+            if re.match(r'^"[^"]*"$', obj):  # Match strings enclosed in double quotes
+                extracted_string = obj
+                translated_string = translation_map['sql_string'].get(extracted_string, extracted_string)
+                if extracted_string != translated_string:
+                    print(f"Replacing '{extracted_string}' with '{translated_string}'")
+                return translated_string
+            else:
+                return obj
+        elif isinstance(obj, list):
+            return [recursive_extract_and_replace(item) for item in obj]
+        elif isinstance(obj, dict):
+            return {key: recursive_extract_and_replace(value) for key, value in obj.items()}
+        else:
+            return obj
+
+    return recursive_extract_and_replace(sql)
+
 
 def replace_values_in_json(data, translation_map, is_table=False):
     """
@@ -264,14 +301,18 @@ def replace_values_in_json(data, translation_map, is_table=False):
 
             # Generate and replace query_toks_no_value
             # item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'], item['query_toks_no_value'])
-            item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'])
-
+            item['query_toks_no_value'] = [translation_map['query_toks_no_value'].get(tok, tok) for tok in item['query_toks_no_value']]
 
             # Replace question
             item['question'] = translation_map['question'].get(item['question'], item['question'])
 
             # Replace question_toks without spaces
             item['question_toks'] = tokenize_without_spaces(item['question'])
+            
+            # Replace SQL string based on sql_string_id
+            if 'sql' in item:
+                item['sql'] = extract_and_replace_sql_strings(item['sql'], translation_map)
+                    
 
 def save_json_file(data, output_path):
     """
