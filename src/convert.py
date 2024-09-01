@@ -167,6 +167,7 @@ def normalize_query_string(query):
     # Ensure comparison operators are not separated by spaces
     query = re.sub(r'\s*<\s*=\s*', ' <= ', query)
     query = re.sub(r'\s*>\s*=\s*', ' >= ', query)
+    query = re.sub(r'\s*!\s*=\s*', ' != ', query)
     
     # Remove spaces before semicolons
     query = re.sub(r'\s*;\s*', ';', query)
@@ -174,6 +175,9 @@ def normalize_query_string(query):
     # Remove spaces around parentheses
     query = re.sub(r'\s*\(\s*', ' (', query)
     query = re.sub(r'\s*\)\s*', ') ', query)
+    
+    # Normalize double quotes around words
+    query = re.sub(r'``\s*(.*?)\s*\'\'', r"``\1''", query)
     
     return query
 
@@ -311,7 +315,7 @@ def replace_values_in_json(data, translation_map, is_table=False):
             item['db_id'] = translation_map['db_id'].get(db_id, item['db_id'])
             
             # Tokenize the query
-            # query_tokens = tokenize_string(item['query'])
+            query_tokens = tokenize_string(item['query'])
             
             # Translate each token
             translated_tokens = [translation_map['query_toks'].get(tok, tok) for tok in item['query_toks']]
