@@ -168,6 +168,7 @@ def normalize_query_string(query):
     query = re.sub(r'\s*<\s*=\s*', ' <= ', query)
     query = re.sub(r'\s*>\s*=\s*', ' >= ', query)
     query = re.sub(r'\s*!\s*=\s*', ' != ', query)
+    query = re.sub(r'\s*%\s*', '%', query)
     
     # Remove spaces before semicolons
     query = re.sub(r'\s*;\s*', ';', query)
@@ -314,17 +315,25 @@ def replace_values_in_json(data, translation_map, is_table=False):
             db_id = normalize_name(item['db_id'])
             item['db_id'] = translation_map['db_id'].get(db_id, item['db_id'])
             
-            # Tokenize the query
-            query_tokens = tokenize_string(item['query'])
+            # Translate each token, ignoring leading apostrophes
+            translated_tokens = []
+            for tok in item['query_toks']:
+                if tok.startswith("'"):
+                    clean_tok = tok[1:]  # Remove leading apostrophe for translation
+                    translated_token = translation_map['query_toks'].get(clean_tok, clean_tok)
+                    translated_tokens.append(f"'{translated_token}")  # Add apostrophe back
+                else:
+                    translated_token = translation_map['query_toks'].get(tok, tok)
+                    translated_tokens.append(translated_token)
             
             # Translate each token
-            translated_tokens = [translation_map['query_toks'].get(tok, tok) for tok in item['query_toks']]
+            # translated_tokens = [translation_map['query_toks'].get(tok, tok) for tok in item['query_toks']]
             
             # Normalize and reconstruct the query ensuring single spacing
             item['query'] = normalize_query_string(" ".join(translated_tokens))
 
             # Replace query_toks
-            item['query_toks'] = [translation_map['query_toks'].get(tok, tok) for tok in item['query_toks']]
+            item['query_toks'] = translated_tokens;
 
             # Generate and replace query_toks_no_value
             # item['query_toks_no_value'] = generate_query_toks_no_value(item['query_toks'], item['query_toks_no_value'])

@@ -382,7 +382,7 @@
     },
     {
         "db_id": "konser_penyanyi",
-        "query": "SELECT avg (usia) , min (usia) , max (usia) FROM penyanyi WHERE negara = 'France'",
+        "query": "SELECT avg (usia) , min (usia) , max (usia) FROM penyanyi WHERE negara = 'Perancis'",
         "query_toks": [
             "SELECT",
             "avg",
@@ -404,7 +404,7 @@
             "WHERE",
             "negara",
             "=",
-            "'France",
+            "'Perancis",
             "'"
         ],
         "query_toks_no_value": [
@@ -526,7 +526,7 @@
     },
     {
         "db_id": "konser_penyanyi",
-        "query": "SELECT avg (usia) , min (usia) , max (usia) FROM penyanyi WHERE negara = 'France'",
+        "query": "SELECT avg (usia) , min (usia) , max (usia) FROM penyanyi WHERE negara = 'Perancis'",
         "query_toks": [
             "SELECT",
             "avg",
@@ -548,7 +548,7 @@
             "WHERE",
             "negara",
             "=",
-            "'France",
+            "'Perancis",
             "'"
         ],
         "query_toks_no_value": [
@@ -5169,7 +5169,7 @@
     },
     {
         "db_id": "konser_penyanyi",
-        "query": "SELECT nama , negara FROM penyanyi WHERE nama_lagu LIKE ' % Hai %'",
+        "query": "SELECT nama , negara FROM penyanyi WHERE nama_lagu LIKE '%Hai%'",
         "query_toks": [
             "SELECT",
             "nama",
@@ -5278,7 +5278,7 @@
     },
     {
         "db_id": "konser_penyanyi",
-        "query": "SELECT nama , negara FROM penyanyi WHERE nama_lagu LIKE ' % Hai %'",
+        "query": "SELECT nama , negara FROM penyanyi WHERE nama_lagu LIKE '%Hai%'",
         "query_toks": [
             "SELECT",
             "nama",
@@ -7193,7 +7193,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT count (*) FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T2.petid = T3.petid WHERE T1.seks = 'F' AND T3.tipe_hewan_peliharaan = 'dog'",
+        "query": "SELECT count (*) FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T2.petid = T3.petid WHERE T1.seks = 'F' AND T3.tipe_hewan_peliharaan = 'anjing'",
         "query_toks": [
             "SELECT",
             "count",
@@ -7228,7 +7228,7 @@
             "AND",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'"
         ],
         "query_toks_no_value": [
@@ -7414,7 +7414,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT count (*) FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T2.petid = T3.petid WHERE T1.seks = 'F' AND T3.tipe_hewan_peliharaan = 'dog'",
+        "query": "SELECT count (*) FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T2.petid = T3.petid WHERE T1.seks = 'F' AND T3.tipe_hewan_peliharaan = 'anjing'",
         "query_toks": [
             "SELECT",
             "count",
@@ -7449,7 +7449,7 @@
             "AND",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'"
         ],
         "query_toks_no_value": [
@@ -7772,7 +7772,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT DISTINCT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat' OR T3.tipe_hewan_peliharaan = 'dog'",
+        "query": "SELECT DISTINCT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing' OR T3.tipe_hewan_peliharaan = 'anjing'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -7800,12 +7800,12 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             "OR",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'"
         ],
         "query_toks_no_value": [
@@ -7989,7 +7989,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT DISTINCT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat' OR T3.tipe_hewan_peliharaan = 'dog'",
+        "query": "SELECT DISTINCT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing' OR T3.tipe_hewan_peliharaan = 'anjing'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -8017,12 +8017,12 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             "OR",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'"
         ],
         "query_toks_no_value": [
@@ -8557,7 +8557,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat' INTERSECT SELECT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'dog'",
+        "query": "SELECT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing' INTERSECT SELECT T1.NamaF FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'anjing'",
         "query_toks": [
             "SELECT",
             "T1.NamaF",
@@ -8584,7 +8584,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             "INTERSECT",
             "SELECT",
@@ -8612,7 +8612,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'"
         ],
         "query_toks_no_value": [
@@ -8909,7 +8909,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT besar , usia FROM murid WHERE pelajar NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat') ",
+        "query": "SELECT besar , usia FROM murid WHERE pelajar NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing') ",
         "query_toks": [
             "SELECT",
             "besar",
@@ -8947,7 +8947,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             ")"
         ],
@@ -9184,7 +9184,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT besar , usia FROM murid WHERE pelajar NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat') ",
+        "query": "SELECT besar , usia FROM murid WHERE pelajar NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing') ",
         "query_toks": [
             "SELECT",
             "besar",
@@ -9222,7 +9222,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             ")"
         ],
@@ -9463,7 +9463,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT pelajar FROM murid EXCEPT SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat'",
+        "query": "SELECT pelajar FROM murid EXCEPT SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing'",
         "query_toks": [
             "SELECT",
             "pelajar",
@@ -9495,7 +9495,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'"
         ],
         "query_toks_no_value": [
@@ -9694,7 +9694,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT pelajar FROM murid EXCEPT SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat'",
+        "query": "SELECT pelajar FROM murid EXCEPT SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing'",
         "query_toks": [
             "SELECT",
             "pelajar",
@@ -9726,7 +9726,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'"
         ],
         "query_toks_no_value": [
@@ -9923,7 +9923,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT T1.nama_f , T1.usia FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'dog' AND T1.studi NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat') ",
+        "query": "SELECT T1.nama_f , T1.usia FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'anjing' AND T1.studi NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing') ",
         "query_toks": [
             "SELECT",
             "T1.nama_f",
@@ -9952,7 +9952,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'",
             "AND",
             "T1.studi",
@@ -9984,7 +9984,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             ")"
         ],
@@ -10329,7 +10329,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT T1.nama_f , T1.usia FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'dog' AND T1.studi NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'cat') ",
+        "query": "SELECT T1.nama_f , T1.usia FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'anjing' AND T1.studi NOT IN (SELECT T1.studi FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.tipe_hewan_peliharaan = 'kucing') ",
         "query_toks": [
             "SELECT",
             "T1.nama_f",
@@ -10358,7 +10358,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'dog",
+            "'anjing",
             "'",
             "AND",
             "T1.studi",
@@ -10390,7 +10390,7 @@
             "WHERE",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'",
             ")"
         ],
@@ -12844,7 +12844,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT T1.nama FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.pet_age = 3 AND T3.tipe_hewan_peliharaan = 'cat'",
+        "query": "SELECT T1.nama FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.pet_age = 3 AND T3.tipe_hewan_peliharaan = 'kucing'",
         "query_toks": [
             "SELECT",
             "T1.nama",
@@ -12875,7 +12875,7 @@
             "AND",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'"
         ],
         "query_toks_no_value": [
@@ -13057,7 +13057,7 @@
     },
     {
         "db_id": "hewan_peliharaan_1",
-        "query": "SELECT T1.nama FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.pet_age = 3 AND T3.tipe_hewan_peliharaan = 'cat'",
+        "query": "SELECT T1.nama FROM murid AS T1 JOIN has_pet AS T2 ON T1.studi = T2.studi JOIN hewan_peliharaan AS T3 ON T3.petid = T2.petid WHERE T3.pet_age = 3 AND T3.tipe_hewan_peliharaan = 'kucing'",
         "query_toks": [
             "SELECT",
             "T1.nama",
@@ -13088,7 +13088,7 @@
             "AND",
             "T3.tipe_hewan_peliharaan",
             "=",
-            "'cat",
+            "'kucing",
             "'"
         ],
         "query_toks_no_value": [
@@ -17839,7 +17839,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN NEGARA AS T2 ON T1.Negara = T2.Id_Negara WHERE T2.Nama_Negara = 'france';",
+        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN NEGARA AS T2 ON T1.Negara = T2.Id_Negara WHERE T2.Nama_Negara = 'Perancis';",
         "query_toks": [
             "SELECT",
             "count",
@@ -17861,7 +17861,7 @@
             "WHERE",
             "T2.Nama_Negara",
             "=",
-            "'france",
+            "'Perancis",
             "'",
             ";"
         ],
@@ -17983,7 +17983,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN NEGARA AS T2 ON T1.Negara = T2.Id_Negara WHERE T2.Nama_Negara = 'france';",
+        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN NEGARA AS T2 ON T1.Negara = T2.Id_Negara WHERE T2.Nama_Negara = 'Perancis';",
         "query_toks": [
             "SELECT",
             "count",
@@ -18005,7 +18005,7 @@
             "WHERE",
             "T2.Nama_Negara",
             "=",
-            "'france",
+            "'Perancis",
             "'",
             ";"
         ],
@@ -18128,7 +18128,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT count (*) FROM MODEL_DAFTAR AS T1 JOIN CAR_MAKERS AS T2 ON T1.Pembuat = T2.Id JOIN NEGARA AS T3 ON T2.Negara = T3.Id_Negara WHERE T3.Nama_Negara = 'usa';",
+        "query": "SELECT count (*) FROM MODEL_DAFTAR AS T1 JOIN CAR_MAKERS AS T2 ON T1.Pembuat = T2.Id JOIN NEGARA AS T3 ON T2.Negara = T3.Id_Negara WHERE T3.Nama_Negara = 'Amerika_Serikat';",
         "query_toks": [
             "SELECT",
             "count",
@@ -18158,7 +18158,7 @@
             "WHERE",
             "T3.Nama_Negara",
             "=",
-            "'usa",
+            "'Amerika_Serikat",
             "'",
             ";"
         ],
@@ -18318,7 +18318,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT count (*) FROM MODEL_DAFTAR AS T1 JOIN CAR_MAKERS AS T2 ON T1.Pembuat = T2.Id JOIN NEGARA AS T3 ON T2.Negara = T3.Id_Negara WHERE T3.Nama_Negara = 'usa';",
+        "query": "SELECT count (*) FROM MODEL_DAFTAR AS T1 JOIN CAR_MAKERS AS T2 ON T1.Pembuat = T2.Id JOIN NEGARA AS T3 ON T2.Negara = T3.Id_Negara WHERE T3.Nama_Negara = 'Amerika_Serikat';",
         "query_toks": [
             "SELECT",
             "count",
@@ -18348,7 +18348,7 @@
             "WHERE",
             "T3.Nama_Negara",
             "=",
-            "'usa",
+            "'Amerika_Serikat",
             "'",
             ";"
         ],
@@ -19865,7 +19865,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT T1.Nama_Negara FROM NEGARA AS T1 JOIN BENUA AS T2 ON T1.Benua = T2.LanjutanId JOIN CAR_MAKERS AS T3 ON T1.Id_Negara = T3.Negara WHERE T2.Benua = 'europe' GROUP BY T1.Nama_Negara HAVING count (*) >= 3;",
+        "query": "SELECT T1.Nama_Negara FROM NEGARA AS T1 JOIN BENUA AS T2 ON T1.Benua = T2.LanjutanId JOIN CAR_MAKERS AS T3 ON T1.Id_Negara = T3.Negara WHERE T2.Benua = 'eropa' GROUP BY T1.Nama_Negara HAVING count (*) >= 3;",
         "query_toks": [
             "SELECT",
             "T1.Nama_Negara",
@@ -19892,7 +19892,7 @@
             "WHERE",
             "T2.Benua",
             "=",
-            "'europe",
+            "'eropa",
             "'",
             "GROUP",
             "BY",
@@ -20099,7 +20099,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT T1.Nama_Negara FROM NEGARA AS T1 JOIN BENUA AS T2 ON T1.Benua = T2.LanjutanId JOIN CAR_MAKERS AS T3 ON T1.Id_Negara = T3.Negara WHERE T2.Benua = 'europe' GROUP BY T1.Nama_Negara HAVING count (*) >= 3;",
+        "query": "SELECT T1.Nama_Negara FROM NEGARA AS T1 JOIN BENUA AS T2 ON T1.Benua = T2.LanjutanId JOIN CAR_MAKERS AS T3 ON T1.Id_Negara = T3.Negara WHERE T2.Benua = 'eropa' GROUP BY T1.Nama_Negara HAVING count (*) >= 3;",
         "query_toks": [
             "SELECT",
             "T1.Nama_Negara",
@@ -20126,7 +20126,7 @@
             "WHERE",
             "T2.Benua",
             "=",
-            "'europe",
+            "'eropa",
             "'",
             "GROUP",
             "BY",
@@ -22287,7 +22287,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN MODEL_DAFTAR AS T2 ON T1.Id = T2.Pembuat WHERE T1.Nama_Lengkap = 'American Motor Perusahaan';",
+        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN MODEL_DAFTAR AS T2 ON T1.Id = T2.Pembuat WHERE T1.Nama_Lengkap = 'Amerika Motor Perusahaan';",
         "query_toks": [
             "SELECT",
             "count",
@@ -22309,7 +22309,7 @@
             "WHERE",
             "T1.Nama_Lengkap",
             "=",
-            "'American",
+            "'Amerika",
             "Motor",
             "Perusahaan",
             "'",
@@ -22441,7 +22441,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN MODEL_DAFTAR AS T2 ON T1.Id = T2.Pembuat WHERE T1.Nama_Lengkap = 'American Motor Perusahaan';",
+        "query": "SELECT count (*) FROM CAR_MAKERS AS T1 JOIN MODEL_DAFTAR AS T2 ON T1.Id = T2.Pembuat WHERE T1.Nama_Lengkap = 'Amerika Motor Perusahaan';",
         "query_toks": [
             "SELECT",
             "count",
@@ -22463,7 +22463,7 @@
             "WHERE",
             "T1.Nama_Lengkap",
             "=",
-            "'American",
+            "'Amerika",
             "Motor",
             "Perusahaan",
             "'",
@@ -26210,7 +26210,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT DISTINCT T1.model FROM MODEL_DAFTAR AS T1 JOIN CAR_NAMES AS T2 ON T1.Model = T2.Model JOIN MOBIL_DATA AS T3 ON T2.MakeId = T3.Id JOIN CAR_MAKERS AS T4 ON T1.Pembuat = T4.Id WHERE T3.berat < 3500 AND T4.Nama_Lengkap != 'Ford Motor Perusahaan';",
+        "query": "SELECT DISTINCT T1.model FROM MODEL_DAFTAR AS T1 JOIN CAR_NAMES AS T2 ON T1.Model = T2.Model JOIN MOBIL_DATA AS T3 ON T2.MakeId = T3.Id JOIN CAR_MAKERS AS T4 ON T1.Pembuat = T4.Id WHERE T3.berat < 3500 AND T4.Nama_Lengkap != 'Mengarungi Motor Perusahaan';",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -26251,7 +26251,7 @@
             "T4.Nama_Lengkap",
             "!",
             "=",
-            "'Ford",
+            "'Mengarungi",
             "Motor",
             "Perusahaan",
             "'",
@@ -26478,7 +26478,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT DISTINCT T1.model FROM MODEL_DAFTAR AS T1 JOIN CAR_NAMES AS T2 ON T1.Model = T2.Model JOIN MOBIL_DATA AS T3 ON T2.MakeId = T3.Id JOIN CAR_MAKERS AS T4 ON T1.Pembuat = T4.Id WHERE T3.berat < 3500 AND T4.Nama_Lengkap != 'Ford Motor Perusahaan';",
+        "query": "SELECT DISTINCT T1.model FROM MODEL_DAFTAR AS T1 JOIN CAR_NAMES AS T2 ON T1.Model = T2.Model JOIN MOBIL_DATA AS T3 ON T2.MakeId = T3.Id JOIN CAR_MAKERS AS T4 ON T1.Pembuat = T4.Id WHERE T3.berat < 3500 AND T4.Nama_Lengkap != 'Mengarungi Motor Perusahaan';",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -26519,7 +26519,7 @@
             "T4.Nama_Lengkap",
             "!",
             "=",
-            "'Ford",
+            "'Mengarungi",
             "Motor",
             "Perusahaan",
             "'",
@@ -27849,7 +27849,7 @@
     },
     {
         "db_id": "mobil_1",
-        "query": "SELECT T1.negaraId , T1.Nama_Negara FROM Negara AS T1 JOIN CAR_MAKERS AS T2 ON T1.Id_Negara = T2.Negara GROUP BY T1.negaraId HAVING count (*) > 3 UNION SELECT T1.negaraId , T1.Nama_Negara FROM Negara AS T1 JOIN CAR_MAKERS AS T2 ON T1.Id_Negara = T2.Negara JOIN MODEL_DAFTAR AS T3 ON T2.Id = T3.Pembuat WHERE T3.Model = 'fiat';",
+        "query": "SELECT T1.negaraId , T1.Nama_Negara FROM Negara AS T1 JOIN CAR_MAKERS AS T2 ON T1.Id_Negara = T2.Negara GROUP BY T1.negaraId HAVING count (*) > 3 UNION SELECT T1.negaraId , T1.Nama_Negara FROM Negara AS T1 JOIN CAR_MAKERS AS T2 ON T1.Id_Negara = T2.Negara JOIN MODEL_DAFTAR AS T3 ON T2.Id = T3.Pembuat WHERE T3.Model = 'perintah';",
         "query_toks": [
             "SELECT",
             "T1.negaraId",
@@ -27905,7 +27905,7 @@
             "WHERE",
             "T3.Model",
             "=",
-            "'fiat",
+            "'perintah",
             "'",
             ";"
         ],
@@ -44510,7 +44510,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT nama_dokumen , id_templat FROM Dokumen WHERE Dokumen_Deskripsi LIKE ``% w %''",
+        "query": "SELECT nama_dokumen , id_templat FROM Dokumen WHERE Dokumen_Deskripsi LIKE ``%w%''",
         "query_toks": [
             "SELECT",
             "nama_dokumen",
@@ -44624,7 +44624,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT nama_dokumen , id_templat FROM Dokumen WHERE Dokumen_Deskripsi LIKE ``% w %''",
+        "query": "SELECT nama_dokumen , id_templat FROM Dokumen WHERE Dokumen_Deskripsi LIKE ``%w%''",
         "query_toks": [
             "SELECT",
             "nama_dokumen",
@@ -51198,7 +51198,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT count (*) FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.ID_dokumen = T2.ID_dokumen WHERE T2.nama_dokumen = 'Summer Show'",
+        "query": "SELECT count (*) FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.ID_dokumen = T2.ID_dokumen WHERE T2.nama_dokumen = 'Musim_panas Show'",
         "query_toks": [
             "SELECT",
             "count",
@@ -51220,7 +51220,7 @@
             "WHERE",
             "T2.nama_dokumen",
             "=",
-            "'Summer",
+            "'Musim_panas",
             "Show",
             "'"
         ],
@@ -51345,7 +51345,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT count (*) FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.ID_dokumen = T2.ID_dokumen WHERE T2.nama_dokumen = 'Summer Show'",
+        "query": "SELECT count (*) FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.ID_dokumen = T2.ID_dokumen WHERE T2.nama_dokumen = 'Musim_panas Show'",
         "query_toks": [
             "SELECT",
             "count",
@@ -51367,7 +51367,7 @@
             "WHERE",
             "T2.nama_dokumen",
             "=",
-            "'Summer",
+            "'Musim_panas",
             "Show",
             "'"
         ],
@@ -51667,7 +51667,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT T1.id_paragraf , T1.paragraf_teks FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.id_document = T2.id_document WHERE T2.Nama_Dokumen = 'Welcome to NY'",
+        "query": "SELECT T1.id_paragraf , T1.paragraf_teks FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.id_document = T2.id_document WHERE T2.Nama_Dokumen = 'Selamat_datang to NY'",
         "query_toks": [
             "SELECT",
             "T1.id_paragraf",
@@ -51688,7 +51688,7 @@
             "WHERE",
             "T2.Nama_Dokumen",
             "=",
-            "'Welcome",
+            "'Selamat_datang",
             "to",
             "NY",
             "'"
@@ -51834,7 +51834,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT T1.id_paragraf , T1.paragraf_teks FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.id_document = T2.id_document WHERE T2.Nama_Dokumen = 'Welcome to NY'",
+        "query": "SELECT T1.id_paragraf , T1.paragraf_teks FROM Paragraf AS T1 JOIN Dokumen AS T2 ON T1.id_document = T2.id_document WHERE T2.Nama_Dokumen = 'Selamat_datang to NY'",
         "query_toks": [
             "SELECT",
             "T1.id_paragraf",
@@ -51855,7 +51855,7 @@
             "WHERE",
             "T2.Nama_Dokumen",
             "=",
-            "'Welcome",
+            "'Selamat_datang",
             "to",
             "NY",
             "'"
@@ -53891,7 +53891,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Brazil' INTERSECT SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Ireland'",
+        "query": "SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Brazil' INTERSECT SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Irlandia'",
         "query_toks": [
             "SELECT",
             "id_dokumen",
@@ -53910,7 +53910,7 @@
             "WHERE",
             "paragraf_teks",
             "=",
-            "'Ireland",
+            "'Irlandia",
             "'"
         ],
         "query_toks_no_value": [
@@ -54051,7 +54051,7 @@
     },
     {
         "db_id": "cre_Doc_Template_Mgt",
-        "query": "SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Brazil' INTERSECT SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Ireland'",
+        "query": "SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Brazil' INTERSECT SELECT id_dokumen FROM Paragraf WHERE paragraf_teks = 'Irlandia'",
         "query_toks": [
             "SELECT",
             "id_dokumen",
@@ -54070,7 +54070,7 @@
             "WHERE",
             "paragraf_teks",
             "=",
-            "'Ireland",
+            "'Irlandia",
             "'"
         ],
         "query_toks_no_value": [
@@ -58579,7 +58579,7 @@
     },
     {
         "db_id": "museum_kunjungan",
-        "query": "SELECT Jumlah_Staf , Buka_Tahun FROM museum WHERE nama = 'Plaza Museum'",
+        "query": "SELECT Jumlah_Staf , Buka_Tahun FROM museum WHERE nama = 'alun-alun Museum'",
         "query_toks": [
             "SELECT",
             "Jumlah_Staf",
@@ -58590,7 +58590,7 @@
             "WHERE",
             "nama",
             "=",
-            "'Plaza",
+            "'alun-alun",
             "Museum",
             "'"
         ],
@@ -60955,7 +60955,7 @@
     },
     {
         "db_id": "wta_1",
-        "query": "SELECT nama_depan , tanggal_lahir FROM pemain WHERE kode_negara = 'USA'",
+        "query": "SELECT nama_depan , tanggal_lahir FROM pemain WHERE kode_negara = 'Amerika_Serikat'",
         "query_toks": [
             "SELECT",
             "nama_depan",
@@ -60966,7 +60966,7 @@
             "WHERE",
             "kode_negara",
             "=",
-            "'USA",
+            "'Amerika_Serikat",
             "'"
         ],
         "query_toks_no_value": [
@@ -61066,7 +61066,7 @@
     },
     {
         "db_id": "wta_1",
-        "query": "SELECT nama_depan , tanggal_lahir FROM pemain WHERE kode_negara = 'USA'",
+        "query": "SELECT nama_depan , tanggal_lahir FROM pemain WHERE kode_negara = 'Amerika_Serikat'",
         "query_toks": [
             "SELECT",
             "nama_depan",
@@ -61077,7 +61077,7 @@
             "WHERE",
             "kode_negara",
             "=",
-            "'USA",
+            "'Amerika_Serikat",
             "'"
         ],
         "query_toks_no_value": [
@@ -62695,7 +62695,7 @@
     },
     {
         "db_id": "wta_1",
-        "query": "SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'WTA Kejuaraan' INTERSECT SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'Australian Open'",
+        "query": "SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'WTA Kejuaraan' INTERSECT SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'Australia Open'",
         "query_toks": [
             "SELECT",
             "T1.kode_negara",
@@ -62739,7 +62739,7 @@
             "WHERE",
             "T2.nama_turnaman",
             "=",
-            "'Australian",
+            "'Australia",
             "Open",
             "'"
         ],
@@ -63003,7 +63003,7 @@
     },
     {
         "db_id": "wta_1",
-        "query": "SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'WTA Kejuaraan' INTERSECT SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'Australian Open'",
+        "query": "SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'WTA Kejuaraan' INTERSECT SELECT T1.kode_negara , T1.nama_depan FROM pemain AS T1 JOIN matches AS T2 ON T1.id_player = T2.id_winner WHERE T2.nama_turnaman = 'Australia Open'",
         "query_toks": [
             "SELECT",
             "T1.kode_negara",
@@ -63047,7 +63047,7 @@
             "WHERE",
             "T2.nama_turnaman",
             "=",
-            "'Australian",
+            "'Australia",
             "Open",
             "'"
         ],
@@ -64769,7 +64769,7 @@
     },
     {
         "db_id": "wta_1",
-        "query": "SELECT nama_pemenang FROM matches WHERE nama_pertandingan = 'Australian Open' ORDER BY poin_peringkat_pemenang DESC LIMIT 1",
+        "query": "SELECT nama_pemenang FROM matches WHERE nama_pertandingan = 'Australia Open' ORDER BY poin_peringkat_pemenang DESC LIMIT 1",
         "query_toks": [
             "SELECT",
             "nama_pemenang",
@@ -64778,7 +64778,7 @@
             "WHERE",
             "nama_pertandingan",
             "=",
-            "'Australian",
+            "'Australia",
             "Open",
             "'",
             "ORDER",
@@ -64890,7 +64890,7 @@
     },
     {
         "db_id": "wta_1",
-        "query": "SELECT nama_pemenang FROM matches WHERE nama_pertandingan = 'Australian Open' ORDER BY poin_peringkat_pemenang DESC LIMIT 1",
+        "query": "SELECT nama_pemenang FROM matches WHERE nama_pertandingan = 'Australia Open' ORDER BY poin_peringkat_pemenang DESC LIMIT 1",
         "query_toks": [
             "SELECT",
             "nama_pemenang",
@@ -64899,7 +64899,7 @@
             "WHERE",
             "nama_pertandingan",
             "=",
-            "'Australian",
+            "'Australia",
             "Open",
             "'",
             "ORDER",
@@ -67882,7 +67882,7 @@
     },
     {
         "db_id": "pertempuran_kematian",
-        "query": "SELECT count (*) FROM mengirimkan WHERE disposisi_of_kapal = 'Captured'",
+        "query": "SELECT count (*) FROM mengirimkan WHERE disposisi_of_kapal = 'Ditangkap'",
         "query_toks": [
             "SELECT",
             "count",
@@ -67894,7 +67894,7 @@
             "WHERE",
             "disposisi_of_kapal",
             "=",
-            "'Captured",
+            "'Ditangkap",
             "'"
         ],
         "query_toks_no_value": [
@@ -68325,7 +68325,7 @@
     },
     {
         "db_id": "pertempuran_kematian",
-        "query": "SELECT T1.terbunuh , T1.terluka FROM kematian AS T1 JOIN mengirimkan AS t2 ON T1.id_disebabkan_oleh_kapal = T2.id WHERE T2.tonase = 't'",
+        "query": "SELECT T1.terbunuh , T1.terluka FROM kematian AS T1 JOIN mengirimkan AS t2 ON T1.id_disebabkan_oleh_kapal = T2.id WHERE T2.tonase = 'T'",
         "query_toks": [
             "SELECT",
             "T1.terbunuh",
@@ -68346,7 +68346,7 @@
             "WHERE",
             "T2.tonase",
             "=",
-            "'t",
+            "'T",
             "'"
         ],
         "query_toks_no_value": [
@@ -68596,7 +68596,7 @@
     },
     {
         "db_id": "pertempuran_kematian",
-        "query": "SELECT DISTINCT T1.id , T1.nama FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.tipe_kapal = 'Brig'",
+        "query": "SELECT DISTINCT T1.id , T1.nama FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.tipe_kapal = 'Penjara'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -68618,7 +68618,7 @@
             "WHERE",
             "T2.tipe_kapal",
             "=",
-            "'Brig",
+            "'Penjara",
             "'"
         ],
         "query_toks_no_value": [
@@ -69533,7 +69533,7 @@
     },
     {
         "db_id": "pertempuran_kematian",
-        "query": "SELECT T1.nama , T1.tanggal FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.nama = 'Lettice' INTERSECT SELECT T1.nama , T1.tanggal FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.nama = 'HMS Atalanta'",
+        "query": "SELECT T1.nama , T1.tanggal FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.nama = 'selada' INTERSECT SELECT T1.nama , T1.tanggal FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.nama = 'HMS Atalanta'",
         "query_toks": [
             "SELECT",
             "T1.nama",
@@ -69554,7 +69554,7 @@
             "WHERE",
             "T2.nama",
             "=",
-            "'Lettice",
+            "'selada",
             "'",
             "INTERSECT",
             "SELECT",
@@ -69839,7 +69839,7 @@
     },
     {
         "db_id": "pertempuran_kematian",
-        "query": "SELECT nama , RESULT , komandan_bulgaria FROM pertempuran EXCEPT SELECT T1.nama , T1.hasil , T1.bulgarian_commander FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.lokasi = 'English Saluran'",
+        "query": "SELECT nama , RESULT , komandan_bulgaria FROM pertempuran EXCEPT SELECT T1.nama , T1.hasil , T1.bulgarian_commander FROM pertempuran AS T1 JOIN mengirimkan AS T2 ON T1.id = T2.kalah_dalam_pertempuran WHERE T2.lokasi = 'Bahasa_inggris Saluran'",
         "query_toks": [
             "SELECT",
             "nama",
@@ -69871,7 +69871,7 @@
             "WHERE",
             "T2.lokasi",
             "=",
-            "'English",
+            "'Bahasa_inggris",
             "Saluran",
             "'"
         ],
@@ -70102,7 +70102,7 @@
     },
     {
         "db_id": "pertempuran_kematian",
-        "query": "SELECT catatan FROM kematian WHERE catatan LIKE ' % Timur %'",
+        "query": "SELECT catatan FROM kematian WHERE catatan LIKE '%Timur%'",
         "query_toks": [
             "SELECT",
             "catatan",
@@ -70489,7 +70489,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT deskripsi_kursus FROM Kursus WHERE nama_kursus = 'math'",
+        "query": "SELECT deskripsi_kursus FROM Kursus WHERE nama_kursus = 'matematika'",
         "query_toks": [
             "SELECT",
             "deskripsi_kursus",
@@ -70498,7 +70498,7 @@
             "WHERE",
             "nama_kursus",
             "=",
-            "'math",
+            "'matematika",
             "'"
         ],
         "query_toks_no_value": [
@@ -70574,7 +70574,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT deskripsi_kursus FROM Kursus WHERE nama_kursus = 'math'",
+        "query": "SELECT deskripsi_kursus FROM Kursus WHERE nama_kursus = 'matematika'",
         "query_toks": [
             "SELECT",
             "deskripsi_kursus",
@@ -70583,7 +70583,7 @@
             "WHERE",
             "nama_kursus",
             "=",
-            "'math",
+            "'matematika",
             "'"
         ],
         "query_toks_no_value": [
@@ -70661,7 +70661,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT zip_kode_pos FROM Alamat WHERE kota = 'Port Chelsea'",
+        "query": "SELECT zip_kode_pos FROM Alamat WHERE kota = 'Pelabuhan Chelsea'",
         "query_toks": [
             "SELECT",
             "zip_kode_pos",
@@ -70670,7 +70670,7 @@
             "WHERE",
             "kota",
             "=",
-            "'Port",
+            "'Pelabuhan",
             "Chelsea",
             "'"
         ],
@@ -70751,7 +70751,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT zip_kode_pos FROM Alamat WHERE kota = 'Port Chelsea'",
+        "query": "SELECT zip_kode_pos FROM Alamat WHERE kota = 'Pelabuhan Chelsea'",
         "query_toks": [
             "SELECT",
             "zip_kode_pos",
@@ -70760,7 +70760,7 @@
             "WHERE",
             "kota",
             "=",
-            "'Port",
+            "'Pelabuhan",
             "Chelsea",
             "'"
         ],
@@ -71481,7 +71481,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT count (*) FROM Departemen AS T1 JOIN Gelar_Program AS T2 ON T1.id_departemen = T2.id_department WHERE T1.nama_departemen = 'engineer'",
+        "query": "SELECT count (*) FROM Departemen AS T1 JOIN Gelar_Program AS T2 ON T1.id_departemen = T2.id_department WHERE T1.nama_departemen = 'insinyur'",
         "query_toks": [
             "SELECT",
             "count",
@@ -71503,7 +71503,7 @@
             "WHERE",
             "T1.nama_departemen",
             "=",
-            "'engineer",
+            "'insinyur",
             "'"
         ],
         "query_toks_no_value": [
@@ -71624,7 +71624,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT count (*) FROM Departemen AS T1 JOIN Gelar_Program AS T2 ON T1.id_departemen = T2.id_department WHERE T1.nama_departemen = 'engineer'",
+        "query": "SELECT count (*) FROM Departemen AS T1 JOIN Gelar_Program AS T2 ON T1.id_departemen = T2.id_department WHERE T1.nama_departemen = 'insinyur'",
         "query_toks": [
             "SELECT",
             "count",
@@ -71646,7 +71646,7 @@
             "WHERE",
             "T1.nama_departemen",
             "=",
-            "'engineer",
+            "'insinyur",
             "'"
         ],
         "query_toks_no_value": [
@@ -72818,7 +72818,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT departemen_deskripsi FROM Departemen WHERE nama_departemen LIKE ' % komputer %'",
+        "query": "SELECT departemen_deskripsi FROM Departemen WHERE nama_departemen LIKE '%komputer%'",
         "query_toks": [
             "SELECT",
             "departemen_deskripsi",
@@ -72910,7 +72910,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT departemen_deskripsi FROM Departemen WHERE nama_departemen LIKE ' % komputer %'",
+        "query": "SELECT departemen_deskripsi FROM Departemen WHERE nama_departemen LIKE '%komputer%'",
         "query_toks": [
             "SELECT",
             "departemen_deskripsi",
@@ -73453,7 +73453,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT DISTINCT T1.nama_depan , T1.nama_tengah , T1.nama_belakang FROM Siswa AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_siswa = T2.id_siswa JOIN Gelar_Program AS T3 ON T2.id_derajat_program = T3.id_derajat_program WHERE T3.degree_summary_nama = 'Bachelor'",
+        "query": "SELECT DISTINCT T1.nama_depan , T1.nama_tengah , T1.nama_belakang FROM Siswa AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_siswa = T2.id_siswa JOIN Gelar_Program AS T3 ON T2.id_derajat_program = T3.id_derajat_program WHERE T3.degree_summary_nama = 'Sarjana'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -73485,7 +73485,7 @@
             "WHERE",
             "T3.degree_summary_nama",
             "=",
-            "'Bachelor",
+            "'Sarjana",
             "'"
         ],
         "query_toks_no_value": [
@@ -73685,7 +73685,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT DISTINCT T1.nama_depan , T1.nama_tengah , T1.nama_belakang FROM Siswa AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_siswa = T2.id_siswa JOIN Gelar_Program AS T3 ON T2.id_derajat_program = T3.id_derajat_program WHERE T3.degree_summary_nama = 'Bachelor'",
+        "query": "SELECT DISTINCT T1.nama_depan , T1.nama_tengah , T1.nama_belakang FROM Siswa AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_siswa = T2.id_siswa JOIN Gelar_Program AS T3 ON T2.id_derajat_program = T3.id_derajat_program WHERE T3.degree_summary_nama = 'Sarjana'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -73717,7 +73717,7 @@
             "WHERE",
             "T3.degree_summary_nama",
             "=",
-            "'Bachelor",
+            "'Sarjana",
             "'"
         ],
         "query_toks_no_value": [
@@ -75969,7 +75969,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT T1.nama_belakang FROM Siswa AS T1 JOIN Alamat AS T2 ON T1.id_current_address = T2.id_address WHERE T2.state_province_county = 'NorthCarolina' EXCEPT SELECT DISTINCT T3.nama_belakang FROM Siswa AS T3 JOIN Siswa_Pendaftaran AS T4 ON T3.id_siswa = T4.id_student",
+        "query": "SELECT T1.nama_belakang FROM Siswa AS T1 JOIN Alamat AS T2 ON T1.id_current_address = T2.id_address WHERE T2.state_province_county = 'Carolina_Utara' EXCEPT SELECT DISTINCT T3.nama_belakang FROM Siswa AS T3 JOIN Siswa_Pendaftaran AS T4 ON T3.id_siswa = T4.id_student",
         "query_toks": [
             "SELECT",
             "T1.nama_belakang",
@@ -75988,7 +75988,7 @@
             "WHERE",
             "T2.state_province_county",
             "=",
-            "'NorthCarolina",
+            "'Carolina_Utara",
             "'",
             "EXCEPT",
             "SELECT",
@@ -76220,7 +76220,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT T1.nama_belakang FROM Siswa AS T1 JOIN Alamat AS T2 ON T1.id_current_address = T2.id_address WHERE T2.state_province_county = 'NorthCarolina' EXCEPT SELECT DISTINCT T3.nama_belakang FROM Siswa AS T3 JOIN Siswa_Pendaftaran AS T4 ON T3.id_siswa = T4.id_student",
+        "query": "SELECT T1.nama_belakang FROM Siswa AS T1 JOIN Alamat AS T2 ON T1.id_current_address = T2.id_address WHERE T2.state_province_county = 'Carolina_Utara' EXCEPT SELECT DISTINCT T3.nama_belakang FROM Siswa AS T3 JOIN Siswa_Pendaftaran AS T4 ON T3.id_siswa = T4.id_student",
         "query_toks": [
             "SELECT",
             "T1.nama_belakang",
@@ -76239,7 +76239,7 @@
             "WHERE",
             "T2.state_province_county",
             "=",
-            "'NorthCarolina",
+            "'Carolina_Utara",
             "'",
             "EXCEPT",
             "SELECT",
@@ -76828,7 +76828,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT nomor_ponsel_ponsel FROM Siswa WHERE nama_depan = 'Timmothy' AND nama_belakang = 'Ward'",
+        "query": "SELECT nomor_ponsel_ponsel FROM Siswa WHERE nama_depan = 'Timotius' AND nama_belakang = 'Bangsal'",
         "query_toks": [
             "SELECT",
             "nomor_ponsel_ponsel",
@@ -76837,12 +76837,12 @@
             "WHERE",
             "nama_depan",
             "=",
-            "'Timmothy",
+            "'Timotius",
             "'",
             "AND",
             "nama_belakang",
             "=",
-            "'Ward",
+            "'Bangsal",
             "'"
         ],
         "query_toks_no_value": [
@@ -79460,7 +79460,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Master' INTERSECT SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Bachelor'",
+        "query": "SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Menguasai' INTERSECT SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Sarjana'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -79480,7 +79480,7 @@
             "WHERE",
             "gelar_ringkasan_nama",
             "=",
-            "'Master",
+            "'Menguasai",
             "'",
             "INTERSECT",
             "SELECT",
@@ -79501,7 +79501,7 @@
             "WHERE",
             "gelar_ringkasan_nama",
             "=",
-            "'Bachelor",
+            "'Sarjana",
             "'"
         ],
         "query_toks_no_value": [
@@ -79724,7 +79724,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Master' INTERSECT SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Bachelor'",
+        "query": "SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Menguasai' INTERSECT SELECT DISTINCT T2.id_semester FROM Gelar_Program AS T1 JOIN Siswa_Pendaftaran AS T2 ON T1.id_derajat_program = T2.id_derajat_program WHERE gelar_ringkasan_nama = 'Sarjana'",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -79744,7 +79744,7 @@
             "WHERE",
             "gelar_ringkasan_nama",
             "=",
-            "'Master",
+            "'Menguasai",
             "'",
             "INTERSECT",
             "SELECT",
@@ -79765,7 +79765,7 @@
             "WHERE",
             "gelar_ringkasan_nama",
             "=",
-            "'Bachelor",
+            "'Sarjana",
             "'"
         ],
         "query_toks_no_value": [
@@ -80312,7 +80312,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT bagian_deskripsi FROM Bagian WHERE nama_bagian = 'h'",
+        "query": "SELECT bagian_deskripsi FROM Bagian WHERE nama_bagian = 'H'",
         "query_toks": [
             "SELECT",
             "bagian_deskripsi",
@@ -80321,7 +80321,7 @@
             "WHERE",
             "nama_bagian",
             "=",
-            "'h",
+            "'H",
             "'"
         ],
         "query_toks_no_value": [
@@ -80396,7 +80396,7 @@
     },
     {
         "db_id": "pelacakan_transkrip_siswa",
-        "query": "SELECT bagian_deskripsi FROM Bagian WHERE nama_bagian = 'h'",
+        "query": "SELECT bagian_deskripsi FROM Bagian WHERE nama_bagian = 'H'",
         "query_toks": [
             "SELECT",
             "bagian_deskripsi",
@@ -80405,7 +80405,7 @@
             "WHERE",
             "nama_bagian",
             "=",
-            "'h",
+            "'H",
             "'"
         ],
         "query_toks_no_value": [
@@ -87458,7 +87458,7 @@
     },
     {
         "db_id": "acara_TV",
-        "query": "SELECT Rasio_aspek_piksel_PAR , negara FROM saluran_tv WHERE LANGUAGE != 'English'",
+        "query": "SELECT Rasio_aspek_piksel_PAR , negara FROM saluran_tv WHERE LANGUAGE != 'Bahasa_inggris'",
         "query_toks": [
             "SELECT",
             "Rasio_aspek_piksel_PAR",
@@ -87470,7 +87470,7 @@
             "LANGUAGE",
             "!",
             "=",
-            "'English",
+            "'Bahasa_inggris",
             "'"
         ],
         "query_toks_no_value": [
@@ -87570,7 +87570,7 @@
     },
     {
         "db_id": "acara_TV",
-        "query": "SELECT Rasio_aspek_piksel_PAR , negara FROM saluran_tv WHERE LANGUAGE != 'English'",
+        "query": "SELECT Rasio_aspek_piksel_PAR , negara FROM saluran_tv WHERE LANGUAGE != 'Bahasa_inggris'",
         "query_toks": [
             "SELECT",
             "Rasio_aspek_piksel_PAR",
@@ -87582,7 +87582,7 @@
             "LANGUAGE",
             "!",
             "=",
-            "'English",
+            "'Bahasa_inggris",
             "'"
         ],
         "query_toks_no_value": [
@@ -94301,7 +94301,7 @@
     },
     {
         "db_id": "pemilih_1",
-        "query": "SELECT T2.dibuat , T2.negara_bagian , T2.nomor_telepon FROM kontestan AS T1 JOIN suara AS T2 ON T1.nomor_kontestan = T2.nomor_kontestan WHERE T1.nama_kontestan = 'Tabatha Gehling'",
+        "query": "SELECT T2.dibuat , T2.negara_bagian , T2.nomor_telepon FROM kontestan AS T1 JOIN suara AS T2 ON T1.nomor_kontestan = T2.nomor_kontestan WHERE T1.nama_kontestan = 'Tabata Gehling'",
         "query_toks": [
             "SELECT",
             "T2.dibuat",
@@ -94324,7 +94324,7 @@
             "WHERE",
             "T1.nama_kontestan",
             "=",
-            "'Tabatha",
+            "'Tabata",
             "Gehling",
             "'"
         ],
@@ -94488,7 +94488,7 @@
     },
     {
         "db_id": "pemilih_1",
-        "query": "SELECT T3.area_code FROM kontestan AS T1 JOIN suara AS T2 ON T1.nomor_kontestan = T2.nomor_kontestan JOIN area_code_state AS T3 ON T2.negara_bagian = T3.negara_bagian WHERE T1.nama_kontestan = 'Tabatha Gehling' INTERSECT SELECT T3.area_code FROM kontestan AS T1 JOIN suara AS T2 ON T1.nomor_kontestan = T2.nomor_kontestan JOIN area_code_state AS T3 ON T2.negara_bagian = T3.negara_bagian WHERE T1.nama_kontestan = 'Kelly Klausa'",
+        "query": "SELECT T3.area_code FROM kontestan AS T1 JOIN suara AS T2 ON T1.nomor_kontestan = T2.nomor_kontestan JOIN area_code_state AS T3 ON T2.negara_bagian = T3.negara_bagian WHERE T1.nama_kontestan = 'Tabata Gehling' INTERSECT SELECT T3.area_code FROM kontestan AS T1 JOIN suara AS T2 ON T1.nomor_kontestan = T2.nomor_kontestan JOIN area_code_state AS T3 ON T2.negara_bagian = T3.negara_bagian WHERE T1.nama_kontestan = 'kelly Klausa'",
         "query_toks": [
             "SELECT",
             "T3.area_code",
@@ -94515,7 +94515,7 @@
             "WHERE",
             "T1.nama_kontestan",
             "=",
-            "'Tabatha",
+            "'Tabata",
             "Gehling",
             "'",
             "INTERSECT",
@@ -94544,7 +94544,7 @@
             "WHERE",
             "T1.nama_kontestan",
             "=",
-            "'Kelly",
+            "'kelly",
             "Klausa",
             "'"
         ],
@@ -108051,7 +108051,7 @@
     },
     {
         "db_id": "dunia_1",
-        "query": "SELECT DISTINCT T2.Nama FROM negara AS T1 JOIN kota AS T2 ON T2.Kode_Negara = T1.Kode WHERE T1.Benua = 'Europe' AND T1.Nama NOT IN (SELECT T3.Nama FROM negara AS T3 JOIN bahasa_negara AS T4 ON T3.Kode = T4.Kode_Negara WHERE T4.IsResmi = 'T' AND T4.Bahasa = 'English') ",
+        "query": "SELECT DISTINCT T2.Nama FROM negara AS T1 JOIN kota AS T2 ON T2.Kode_Negara = T1.Kode WHERE T1.Benua = 'Eropa' AND T1.Nama NOT IN (SELECT T3.Nama FROM negara AS T3 JOIN bahasa_negara AS T4 ON T3.Kode = T4.Kode_Negara WHERE T4.IsResmi = 'T' AND T4.Bahasa = 'Bahasa_inggris') ",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -108071,7 +108071,7 @@
             "WHERE",
             "T1.Benua",
             "=",
-            "'Europe",
+            "'Eropa",
             "'",
             "AND",
             "T1.Nama",
@@ -108100,7 +108100,7 @@
             "AND",
             "T4.Bahasa",
             "=",
-            "'English",
+            "'Bahasa_inggris",
             "'",
             ")"
         ],
@@ -108375,7 +108375,7 @@
     },
     {
         "db_id": "dunia_1",
-        "query": "SELECT DISTINCT T2.Nama FROM negara AS T1 JOIN kota AS T2 ON T2.Kode_Negara = T1.Kode WHERE T1.Benua = 'Europe' AND T1.Nama NOT IN (SELECT T3.Nama FROM negara AS T3 JOIN bahasa_negara AS T4 ON T3.Kode = T4.Kode_Negara WHERE T4.IsResmi = 'T' AND T4.Bahasa = 'English') ",
+        "query": "SELECT DISTINCT T2.Nama FROM negara AS T1 JOIN kota AS T2 ON T2.Kode_Negara = T1.Kode WHERE T1.Benua = 'Eropa' AND T1.Nama NOT IN (SELECT T3.Nama FROM negara AS T3 JOIN bahasa_negara AS T4 ON T3.Kode = T4.Kode_Negara WHERE T4.IsResmi = 'T' AND T4.Bahasa = 'Bahasa_inggris') ",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -108395,7 +108395,7 @@
             "WHERE",
             "T1.Benua",
             "=",
-            "'Europe",
+            "'Eropa",
             "'",
             "AND",
             "T1.Nama",
@@ -108424,7 +108424,7 @@
             "AND",
             "T4.Bahasa",
             "=",
-            "'English",
+            "'Bahasa_inggris",
             "'",
             ")"
         ],
@@ -108945,7 +108945,7 @@
     },
     {
         "db_id": "dunia_1",
-        "query": "SELECT DISTINCT T3.Nama FROM negara AS T1 JOIN bahasa_negara AS T2 ON T1.Kode = T2.Kode_Negara JOIN kota AS T3 ON T1.Kode = T3.Kode_Negara WHERE T2.IsResmi = 'T' AND T2.Bahasa = 'Chinese' AND T1.Benua = ``Asia''",
+        "query": "SELECT DISTINCT T3.Nama FROM negara AS T1 JOIN bahasa_negara AS T2 ON T1.Kode = T2.Kode_Negara JOIN kota AS T3 ON T1.Kode = T3.Kode_Negara WHERE T2.IsResmi = 'T' AND T2.Bahasa = 'Cina' AND T1.Benua = ``Asia''",
         "query_toks": [
             "SELECT",
             "DISTINCT",
@@ -108978,7 +108978,7 @@
             "AND",
             "T2.Bahasa",
             "=",
-            "'Chinese",
+            "'Cina",
             "'",
             "AND",
             "T1.Benua",
@@ -113841,7 +113841,7 @@
     },
     {
         "db_id": "orkestra",
-        "query": "SELECT Name FROM konduktor WHERE Kebangsaan != 'USA'",
+        "query": "SELECT Name FROM konduktor WHERE Kebangsaan != 'Amerika_Serikat'",
         "query_toks": [
             "SELECT",
             "Name",
@@ -113851,7 +113851,7 @@
             "Kebangsaan",
             "!",
             "=",
-            "'USA",
+            "'Amerika_Serikat",
             "'"
         ],
         "query_toks_no_value": [
@@ -113931,7 +113931,7 @@
     },
     {
         "db_id": "orkestra",
-        "query": "SELECT Name FROM konduktor WHERE Kebangsaan != 'USA'",
+        "query": "SELECT Name FROM konduktor WHERE Kebangsaan != 'Amerika_Serikat'",
         "query_toks": [
             "SELECT",
             "Name",
@@ -113941,7 +113941,7 @@
             "Kebangsaan",
             "!",
             "=",
-            "'USA",
+            "'Amerika_Serikat",
             "'"
         ],
         "query_toks_no_value": [
@@ -133465,7 +133465,7 @@
     },
     {
         "db_id": "kandang_anjing",
-        "query": "SELECT alamat_email FROM Profesional WHERE state = 'Hawaii' OR state = 'Wisconsin'",
+        "query": "SELECT alamat_email FROM Profesional WHERE state = 'Hawai' OR state = 'Wisconsin'",
         "query_toks": [
             "SELECT",
             "alamat_email",
@@ -133474,7 +133474,7 @@
             "WHERE",
             "state",
             "=",
-            "'Hawaii",
+            "'Hawai",
             "'",
             "OR",
             "state",
@@ -133585,7 +133585,7 @@
     },
     {
         "db_id": "kandang_anjing",
-        "query": "SELECT alamat_email FROM Profesional WHERE state = 'Hawaii' OR state = 'Wisconsin'",
+        "query": "SELECT alamat_email FROM Profesional WHERE state = 'Hawai' OR state = 'Wisconsin'",
         "query_toks": [
             "SELECT",
             "alamat_email",
@@ -133594,7 +133594,7 @@
             "WHERE",
             "state",
             "=",
-            "'Hawaii",
+            "'Hawai",
             "'",
             "OR",
             "state",
@@ -134149,7 +134149,7 @@
     },
     {
         "db_id": "kandang_anjing",
-        "query": "SELECT kode_peran , jalan , kota , state FROM profesional WHERE kota LIKE ' % Barat %'",
+        "query": "SELECT kode_peran , jalan , kota , state FROM profesional WHERE kota LIKE '%Barat%'",
         "query_toks": [
             "SELECT",
             "kode_peran",
@@ -134302,7 +134302,7 @@
     },
     {
         "db_id": "kandang_anjing",
-        "query": "SELECT kode_peran , jalan , kota , state FROM profesional WHERE kota LIKE ' % Barat %'",
+        "query": "SELECT kode_peran , jalan , kota , state FROM profesional WHERE kota LIKE '%Barat%'",
         "query_toks": [
             "SELECT",
             "kode_peran",
@@ -134455,7 +134455,7 @@
     },
     {
         "db_id": "kandang_anjing",
-        "query": "SELECT nama_depan , nama_belakang , alamat_email FROM Pemilik WHERE state LIKE ' % Utara %'",
+        "query": "SELECT nama_depan , nama_belakang , alamat_email FROM Pemilik WHERE state LIKE '%Utara%'",
         "query_toks": [
             "SELECT",
             "nama_depan",
@@ -134593,7 +134593,7 @@
     },
     {
         "db_id": "kandang_anjing",
-        "query": "SELECT nama_depan , nama_belakang , alamat_email FROM Pemilik WHERE state LIKE ' % Utara %'",
+        "query": "SELECT nama_depan , nama_belakang , alamat_email FROM Pemilik WHERE state LIKE '%Utara%'",
         "query_toks": [
             "SELECT",
             "nama_depan",
