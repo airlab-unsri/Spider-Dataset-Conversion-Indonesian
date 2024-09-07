@@ -213,7 +213,7 @@ def normalize_query_string(query):
     query = re.sub(r'\s*\)\s*', ') ', query)
     
     # Normalize double quotes around words
-    query = re.sub(r'``\s*(.*?)\s*\'\'', r"``\1''", query)
+    query = re.sub(r'``\s*(.*?)\s*\'\'', r"'\1'", query)
     
     return query
 
@@ -439,9 +439,9 @@ def main():
     # Translate dev.json, train_others.json, train_spider.json
     for file_name in ['dev.json', 'train_others.json', 'train_spider.json']:
         json_data = load_json_file(os.path.join(script_dir, f'../data/spider/{file_name}'))
-        json_data = replace_date_format(json_data)        
         translation_map = load_translation_mappings_train_dev(os.path.join(script_dir, input_paths[file_name]))
         replace_values_in_json(json_data, translation_map, is_table=False)
+        json_data = replace_date_format(json_data)
         save_json_file(json_data, os.path.join(output_dir, file_name))
 
 if __name__ == '__main__':
