@@ -133,15 +133,50 @@ def tokenize_string(s):
 
 def tokenize_without_spaces(s):
     """
-    Tokenize a string without including spaces, focusing on specific punctuation.
+    Tokenize a string without including spaces, focusing on specific punctuation and keeping date-time formats and quoted strings intact.
 
     Parameters:
         s (str): The string to tokenize.
 
     Returns:
-        list: A list of tokens split by alphanumeric characters and specific punctuation.
+        list: A list of tokens split by alphanumeric characters, specific punctuation, date-time formats, and quoted strings.
     """
-    return re.findall(r"[A-Za-z0-9_]+|[.,?()]", s)
+    # Regex pattern to match date-time formats
+    date_time_pattern = r"\b\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}\b"
+    # Regex pattern to match time formats
+    time_pattern = r"\b\d{2}:\d{2}:\d{2}\b"
+    # Regex pattern to match date formats
+    date_pattern = r"\b\d{2}-\d{2}-\d{4}\b"
+    # Regex pattern to match quoted strings
+    quoted_string_pattern = r"['\"].*?['\"]"
+    # Regex pattern to match alphanumeric characters and specific punctuation
+    token_pattern = r"[A-Za-z0-9_]+|[.,?()]|['\"]"
+    
+    # Combine all patterns
+    combined_pattern = f"{date_time_pattern}|{time_pattern}|{date_pattern}|{quoted_string_pattern}|{token_pattern}"
+    
+    # Find all matches
+    tokens = re.findall(combined_pattern, s)
+    
+    # Further split quoted strings if necessary
+    final_tokens = []
+    for token in tokens:
+        if re.match(quoted_string_pattern, token):
+            # Split quoted string into parts
+            if token.startswith("'") or token.startswith('"'):
+                opening_quote = token[0]  # Opening quote
+                content = token[1:-1]  # Content
+                split_content = content.split()  # Split content by whitespace
+                if split_content:
+                    final_tokens.append(opening_quote + split_content[0])  # Combine opening quote with first split content
+                    final_tokens.extend(split_content[1:])  # Add the rest of the split content
+                    final_tokens.append(token[-1])  # Closing quote
+            else:
+                final_tokens.append(token)
+        else:
+            final_tokens.append(token)
+    
+    return final_tokens
 
 def normalize_query_string(query):
     """
@@ -272,6 +307,33 @@ def extract_and_replace_sql_strings(sql, translation_map):
 
     return recursive_extract_and_replace(sql)
 
+def replace_date_format(data):
+    """
+    Replace date format from YYYY-MM-DD to DD-MM-YYYY in all string values in the JSON data.
+
+    Parameters:
+        data (dict or list): The JSON data to process.
+
+    Returns:
+        dict or list: The processed JSON data with dates formatted.
+    """
+    # Regex pattern to match dates in YYYY-MM-DD format with word boundaries
+    date_pattern = re.compile(r'\b(\d{4})-(\d{2})-(\d{2})\b')
+    date_replacement = r'\3-\2-\1'  # Replace YYYY-MM-DD with DD-MM-YYYY
+
+    def recursive_replace_dates(obj):
+        if isinstance(obj, str):
+            # Replace date format in string
+            new_str = date_pattern.sub(date_replacement, obj)
+            return new_str
+        elif isinstance(obj, list):
+            return [recursive_replace_dates(item) for item in obj]
+        elif isinstance(obj, dict):
+            return {key: recursive_replace_dates(value) for key, value in obj.items()}
+        else:
+            return obj
+
+    return recursive_replace_dates(data)
 
 def replace_values_in_json(data, translation_map, is_table=False):
     """
@@ -348,7 +410,6 @@ def replace_values_in_json(data, translation_map, is_table=False):
             # Replace SQL string based on sql_string_id
             if 'sql' in item:
                 item['sql'] = extract_and_replace_sql_strings(item['sql'], translation_map)
-                    
 
 def save_json_file(data, output_path):
     """
@@ -378,6 +439,7 @@ def main():
     # Translate dev.json, train_others.json, train_spider.json
     for file_name in ['dev.json', 'train_others.json', 'train_spider.json']:
         json_data = load_json_file(os.path.join(script_dir, f'../data/spider/{file_name}'))
+        json_data = replace_date_format(json_data)        
         translation_map = load_translation_mappings_train_dev(os.path.join(script_dir, input_paths[file_name]))
         replace_values_in_json(json_data, translation_map, is_table=False)
         save_json_file(json_data, os.path.join(output_dir, file_name))

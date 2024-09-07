@@ -5208,7 +5208,8 @@
             "yang",
             "lagunya",
             "bertuliskan",
-            "Hey",
+            "'Hey",
+            "'",
             "?"
         ],
         "sql": {
@@ -5321,7 +5322,8 @@
             "lagu",
             "dengan",
             "kata",
-            "Hey",
+            "'Hey",
+            "'",
             "di",
             "judulnya",
             "?"
@@ -11934,7 +11936,8 @@
             "yang",
             "nama",
             "belakangnya",
-            "Smith",
+            "'Smith",
+            "'",
             "."
         ],
         "sql": {
@@ -12077,7 +12080,8 @@
             "siswa",
             "bernama",
             "belakang",
-            "Smith",
+            "'Smith",
+            "'",
             "?"
         ],
         "sql": {
@@ -26330,9 +26334,10 @@
             "tidak",
             "dibuat",
             "oleh",
-            "Ford",
+            "'Ford",
             "Motor",
             "Company",
+            "'",
             "?"
         ],
         "sql": {
@@ -28007,7 +28012,8 @@
             "atau",
             "memproduksi",
             "model",
-            "fiat",
+            "'fiat",
+            "'",
             "?"
         ],
         "sql": {
@@ -28795,8 +28801,9 @@
             "singkatan",
             "dari",
             "Maskapai",
-            "JetBlue",
+            "\"JetBlue",
             "Airways",
+            "\"",
             "?"
         ],
         "sql": {
@@ -28981,7 +28988,8 @@
             "dan",
             "singkatannya",
             "di",
-            "USA",
+            "\"USA",
+            "\"",
             "."
         ],
         "sql": {
@@ -29806,7 +29814,8 @@
             "yang",
             "memiliki",
             "singkatan",
-            "UAL",
+            "'UAL",
+            "'",
             "?"
         ],
         "sql": {
@@ -29894,7 +29903,8 @@
             "penerbangan",
             "dengan",
             "singkatan",
-            "UAL",
+            "'UAL",
+            "'",
             "."
         ],
         "sql": {
@@ -30381,7 +30391,8 @@
             "bandara",
             "untuk",
             "bandara",
-            "AKO",
+            "'AKO",
+            "'",
             "?"
         ],
         "sql": {
@@ -30469,7 +30480,8 @@
             "bandara",
             "dengan",
             "kode",
-            "AKO",
+            "'AKO",
+            "'",
             "."
         ],
         "sql": {
@@ -30557,7 +30569,8 @@
             "bandara",
             "di",
             "Kota",
-            "Aberdeen",
+            "'Aberdeen",
+            "'",
             "?"
         ],
         "sql": {
@@ -30739,7 +30752,8 @@
             "yang",
             "berangkat",
             "dari",
-            "APG",
+            "'APG",
+            "'",
             "?"
         ],
         "sql": {
@@ -30834,7 +30848,8 @@
             "yang",
             "berangkat",
             "dari",
-            "APG",
+            "'APG",
+            "'",
             "."
         ],
         "sql": {
@@ -31758,12 +31773,14 @@
             "berangkat",
             "dari",
             "Kota",
-            "Aberdeen",
+            "'Aberdeen",
+            "'",
             "dan",
             "memiliki",
             "tujuan",
             "Kota",
-            "Ashley",
+            "'Ashley",
+            "'",
             "?"
         ],
         "sql": {
@@ -32168,8 +32185,9 @@
             "yang",
             "dimiliki",
             "maskapai",
-            "JetBlue",
+            "'JetBlue",
             "Airways",
+            "'",
             "?"
         ],
         "sql": {
@@ -32468,13 +32486,15 @@
             "Berapa",
             "banyak",
             "penerbangan",
-            "United",
+            "'United",
             "Airlines",
+            "'",
             "yang",
             "berangkat",
             "ke",
             "Bandara",
-            "ASY",
+            "'ASY",
+            "'",
             "?"
         ],
         "sql": {
@@ -32822,13 +32842,15 @@
             "Berapa",
             "banyak",
             "penerbangan",
-            "United",
+            "'United",
             "Airlines",
+            "'",
             "yang",
             "berangkat",
             "dari",
             "Bandara",
-            "AHD",
+            "'AHD",
+            "'",
             "?"
         ],
         "sql": {
@@ -33200,7 +33222,8 @@
             "Airlines",
             "menuju",
             "Kota",
-            "Aberdeen",
+            "'Aberdeen",
+            "'",
             "?"
         ],
         "sql": {
@@ -35593,7 +35616,8 @@
             "berangkat",
             "dari",
             "bandara",
-            "AHD",
+            "'AHD",
+            "'",
             "?"
         ],
         "sql": {
@@ -35879,7 +35903,8 @@
             "tiba",
             "di",
             "bandara",
-            "AHD",
+            "'AHD",
+            "'",
             "?"
         ],
         "sql": {
@@ -36214,9 +36239,11 @@
             "penerbangan",
             "dari",
             "bandara",
-            "APG",
+            "'APG",
+            "'",
             "dan",
-            "CVO",
+            "'CVO",
+            "'",
             "."
         ],
         "sql": {
@@ -36750,11 +36777,13 @@
             "penerbangan",
             "dari",
             "bandara",
-            "CVO",
+            "'CVO",
+            "'",
             "tetapi",
             "tidak",
             "dari",
-            "APG",
+            "'APG",
+            "'",
             "."
         ],
         "sql": {
@@ -37872,8 +37901,9 @@
             "nomor",
             "penerbangan",
             "Maskapai",
-            "United",
+            "\"United",
             "Airlines",
+            "\"",
             "?"
         ],
         "sql": {
@@ -38315,7 +38345,8 @@
             "tiba",
             "di",
             "Bandara",
-            "APG",
+            "\"APG",
+            "\"",
             "?"
         ],
         "sql": {
@@ -38526,7 +38557,8 @@
             "berangkat",
             "dari",
             "Kota",
-            "Aberdeen",
+            "\"Aberdeen",
+            "\"",
             "?"
         ],
         "sql": {
@@ -38813,7 +38845,8 @@
             "tiba",
             "di",
             "Kota",
-            "Aberdeen",
+            "\"Aberdeen",
+            "\"",
             "?"
         ],
         "sql": {
@@ -44552,7 +44585,8 @@
             "dengan",
             "deskripsi",
             "huruf",
-            "w",
+            "'w",
+            "'",
             "di",
             "dalamnya",
             "?"
@@ -44783,8 +44817,9 @@
             "untuk",
             "dokumen",
             "bernama",
-            "Robbin",
+            "\"Robbin",
             "CV",
+            "\"",
             "?"
         ],
         "sql": {
@@ -45204,7 +45239,8 @@
             "dengan",
             "kode",
             "tipe",
-            "PPT",
+            "'PPT",
+            "'",
             "?"
         ],
         "sql": {
@@ -48452,8 +48488,9 @@
             "dokumen",
             "dengan",
             "nama",
-            "Data",
+            "\"Data",
             "base",
+            "\"",
             "?"
         ],
         "sql": {
@@ -50121,7 +50158,8 @@
             "kode",
             "tipe",
             "template",
-            "AD",
+            "\"AD",
+            "\"",
             "."
         ],
         "sql": {
@@ -50304,7 +50342,8 @@
             "deskripsi",
             "tipe",
             "templat",
-            "Buku",
+            "\"Buku",
+            "\"",
             "."
         ],
         "sql": {
@@ -50394,7 +50433,8 @@
             "template",
             "dengan",
             "deskripsi",
-            "Buku",
+            "\"Buku",
+            "\"",
             "."
         ],
         "sql": {
@@ -50842,7 +50882,8 @@
             "deskripsi",
             "tipe",
             "template",
-            "Presentasi",
+            "\"Presentasi",
+            "\"",
             "."
         ],
         "sql": {
@@ -50985,7 +51026,8 @@
             "templat",
             "dengan",
             "deskripsi",
-            "Presentasi",
+            "'Presentasi",
+            "'",
             "."
         ],
         "sql": {
@@ -51261,9 +51303,10 @@
             "dokumen",
             "dengan",
             "nama",
-            "Pertunjukan",
+            "'Pertunjukan",
             "Musim",
             "Panas",
+            "'",
             "?"
         ],
         "sql": {
@@ -51408,9 +51451,10 @@
             "dalam",
             "dokumen",
             "bernama",
-            "Pertunjukan",
+            "'Pertunjukan",
             "Musim",
             "Panas",
+            "'",
             "."
         ],
         "sql": {
@@ -51522,7 +51566,8 @@
             "paragraf",
             "dengan",
             "teks",
-            "Korea",
+            "'Korea",
+            "'",
             "."
         ],
         "sql": {
@@ -51609,7 +51654,8 @@
             "yang",
             "terdapat",
             "teks",
-            "Korea",
+            "'Korea",
+            "'",
             "?"
         ],
         "sql": {
@@ -51737,10 +51783,11 @@
             "dokumen",
             "dengan",
             "nama",
-            "Selamat",
+            "'Selamat",
             "datang",
             "di",
             "NY",
+            "'",
             "."
         ],
         "sql": {
@@ -51902,10 +51949,11 @@
             "dalam",
             "dokumen",
             "berjudul",
-            "Selamat",
+            "'Selamat",
             "Datang",
             "di",
             "NY",
+            "'",
             "?"
         ],
         "sql": {
@@ -52059,8 +52107,9 @@
             "paragraf",
             "untuk",
             "dokumen",
-            "Ulasan",
+            "\"Ulasan",
             "Pelanggan",
+            "\"",
             "."
         ],
         "sql": {
@@ -52203,8 +52252,9 @@
             "dokumen",
             "dengan",
             "nama",
-            "Ulasan",
+            "'Ulasan",
             "Pelanggan",
+            "'",
             "?"
         ],
         "sql": {
@@ -53940,9 +53990,11 @@
             "dengan",
             "teks",
             "paragraf",
-            "Brasil",
+            "'Brasil",
+            "'",
             "dan",
-            "Irlandia",
+            "'Irlandia",
+            "'",
             "."
         ],
         "sql": {
@@ -54101,9 +54153,11 @@
             "mengandung",
             "teks",
             "paragraf",
-            "Brasil",
+            "'Brasil",
+            "'",
             "dan",
-            "Irlandia",
+            "'Irlandia",
+            "'",
             "?"
         ],
         "sql": {
@@ -68394,7 +68448,8 @@
             "kapal",
             "dengan",
             "tonase",
-            "t",
+            "'t",
+            "'",
             "?"
         ],
         "sql": {
@@ -68527,7 +68582,8 @@
             "komandan",
             "Bulgaria",
             "bukan",
-            "Boril"
+            "'Boril",
+            "'"
         ],
         "sql": {
             "from": {
@@ -68668,7 +68724,8 @@
             "kehilangan",
             "kapal",
             "jenis",
-            "Brig",
+            "'Brig",
+            "'",
             "?"
         ],
         "sql": {
@@ -69212,12 +69269,14 @@
             "antara",
             "komandan",
             "Bulgaria",
-            "Kaloyan",
+            "'Kaloyan",
+            "'",
             "dan",
             "komandan",
             "Latin",
-            "Baldwin",
+            "'Baldwin",
             "I",
+            "'",
             "?"
         ],
         "sql": {
@@ -69422,7 +69481,8 @@
             "tidak",
             "kehilangan",
             "tonase",
-            "225",
+            "'225",
+            "'",
             "dalam",
             "pertempuran",
             "?"
@@ -69654,12 +69714,14 @@
             "kehilangan",
             "kapal",
             "bernama",
-            "Lettice",
+            "'Lettice",
+            "'",
             "dan",
             "kapal",
             "bernama",
-            "HMS",
-            "Atalanta"
+            "'HMS",
+            "Atalanta",
+            "'"
         ],
         "sql": {
             "from": {
@@ -69936,8 +69998,9 @@
             "yang",
             "hilang",
             "di",
-            "Selat",
+            "'Selat",
             "Inggris",
+            "'",
             "."
         ],
         "sql": {
@@ -70137,7 +70200,8 @@
             "yang",
             "memiliki",
             "substring",
-            "Timur",
+            "'Timur",
+            "'",
             "?"
         ],
         "sql": {
@@ -81025,8 +81089,9 @@
             "yang",
             "disutradarai",
             "oleh",
-            "Ben",
+            "\"Ben",
             "Jones",
+            "\"",
             "."
         ],
         "sql": {
@@ -81216,8 +81281,9 @@
             "yang",
             "ditulis",
             "oleh",
-            "Joseph",
+            "\"Joseph",
             "Kuhr",
+            "\"",
             "?"
         ],
         "sql": {
@@ -81621,11 +81687,13 @@
             "yang",
             "disutradarai",
             "oleh",
-            "Ben",
+            "\"Ben",
             "Jones",
+            "\"",
             "atau",
-            "Brandon",
+            "\"Brandon",
             "Vietti",
+            "\"",
             "."
         ],
         "sql": {
@@ -82332,8 +82400,9 @@
             "dengan",
             "nama",
             "serial",
-            "Sky",
+            "\"Sky",
             "Radio",
+            "\"",
             "?"
         ],
         "sql": {
@@ -82515,8 +82584,9 @@
             "dengan",
             "nama",
             "serial",
-            "Sky",
+            "\"Sky",
             "Radio",
+            "\"",
             "?"
         ],
         "sql": {
@@ -83403,12 +83473,13 @@
             "yang",
             "menayangkan",
             "kartun",
-            "The",
+            "\"The",
             "Rise",
             "of",
             "the",
             "Blue",
-            "Beetle",
+            "Beetle!",
+            "\"",
             "?",
             "Cantumkan",
             "nama",
@@ -83564,12 +83635,13 @@
             "yang",
             "menayangkan",
             "kartun",
-            "The",
+            "\"The",
             "Rise",
             "of",
             "the",
             "Blue",
             "Beetle",
+            "\"",
             "?"
         ],
         "sql": {
@@ -83718,8 +83790,9 @@
             "dengan",
             "nama",
             "serial",
-            "Sky",
+            "\"Sky",
             "Radio",
+            "\"",
             "."
         ],
         "sql": {
@@ -83868,8 +83941,9 @@
             "dengan",
             "nama",
             "serial",
-            "Sky",
+            "\"Sky",
             "Radio",
+            "\"",
             "?"
         ],
         "sql": {
@@ -84565,11 +84639,12 @@
             "TV",
             "dengan",
             "Episode",
-            "A",
+            "\"A",
             "Love",
             "of",
             "a",
             "Lifetime",
+            "\"",
             "?"
         ],
         "sql": {
@@ -84659,11 +84734,12 @@
         "question_toks": [
             "Kapan",
             "episode",
-            "A",
+            "\"A",
             "Love",
             "of",
             "a",
             "Lifetime",
+            "\"",
             "tayang",
             "?"
         ],
@@ -84759,11 +84835,12 @@
             "TV",
             "dengan",
             "Episode",
-            "A",
+            "\"A",
             "Love",
             "of",
             "a",
             "Lifetime",
+            "\"",
             "?"
         ],
         "sql": {
@@ -84856,11 +84933,12 @@
             "mingguan",
             "untuk",
             "episode",
-            "A",
+            "\"A",
             "Love",
             "of",
             "a",
             "Lifetime",
+            "\"",
             "?"
         ],
         "sql": {
@@ -84984,11 +85062,12 @@
             "TV",
             "dengan",
             "Episode",
-            "A",
+            "\"A",
             "Love",
             "of",
             "a",
             "Lifetime",
+            "\"",
             "?",
             "Cantumkan",
             "nama",
@@ -85140,11 +85219,12 @@
             "yang",
             "memiliki",
             "episode",
-            "A",
+            "\"A",
             "Love",
             "of",
             "a",
             "Lifetime",
+            "\"",
             "?"
         ],
         "sql": {
@@ -85294,8 +85374,9 @@
             "dengan",
             "nama",
             "serial",
-            "Sky",
+            "\"Sky",
             "Radio",
+            "\"",
             "."
         ],
         "sql": {
@@ -85437,8 +85518,9 @@
             "serial",
             "TV",
             "berjudul",
-            "Sky",
+            "\"Sky",
             "Radio",
+            "\"",
             "?"
         ],
         "sql": {
@@ -92319,7 +92401,8 @@
             "yang",
             "berkewarganegaraan",
             "bukan",
-            "Rusia",
+            "\"Rusia",
+            "\"",
             "."
         ],
         "sql": {
@@ -93278,7 +93361,8 @@
             "dari",
             "negara",
             "bagian",
-            "CA",
+            "'CA",
+            "'",
             "?"
         ],
         "sql": {
@@ -93369,8 +93453,9 @@
             "yang",
             "namanya",
             "bukan",
-            "Jessie",
-            "Alloway"
+            "'Jessie",
+            "Alloway",
+            "'"
         ],
         "sql": {
             "from": {
@@ -93926,9 +94011,11 @@
             "dari",
             "negara",
             "bagian",
-            "NY",
+            "'NY",
+            "'",
             "atau",
-            "CA",
+            "'CA",
+            "'",
             "?"
         ],
         "sql": {
@@ -94381,8 +94468,9 @@
             "untuk",
             "kontestan",
             "bernama",
-            "Tabatha",
+            "'Tabatha",
             "Gehling",
+            "'",
             "?"
         ],
         "sql": {
@@ -94637,12 +94725,14 @@
             "pemilih",
             "memilih",
             "kontestan",
-            "Tabatha",
+            "'Tabatha",
             "Gehling",
+            "'",
             "dan",
             "kontestan",
-            "Kelly",
+            "'Kelly",
             "Clauss",
+            "'",
             "."
         ],
         "sql": {
@@ -94877,7 +94967,8 @@
             "namanya",
             "mengandung",
             "substring",
-            "Al",
+            "'Al",
+            "'",
             "."
         ],
         "sql": {
@@ -113873,7 +113964,8 @@
             "yang",
             "berkewarganegaraan",
             "bukan",
-            "AS",
+            "\"AS",
+            "\"",
             "?"
         ],
         "sql": {
@@ -113963,7 +114055,8 @@
             "yang",
             "tidak",
             "berkewarganegaraan",
-            "AS",
+            "\"AS",
+            "\"",
             "."
         ],
         "sql": {
@@ -114381,8 +114474,9 @@
             "yang",
             "jenisnya",
             "bukan",
-            "Live",
+            "\"Live",
             "final",
+            "\"",
             "."
         ],
         "sql": {
@@ -114506,8 +114600,9 @@
             "yang",
             "tidak",
             "bertipe",
-            "Live",
+            "\"Live",
             "final",
+            "\"",
             "."
         ],
         "sql": {
@@ -117525,9 +117620,11 @@
             "format",
             "rekamannya",
             "adalah",
-            "CD",
+            "\"CD",
+            "\"",
             "atau",
-            "DVD",
+            "\"DVD",
+            "\"",
             "."
         ],
         "sql": {
@@ -134197,7 +134294,8 @@
             "yang",
             "memiliki",
             "substring",
-            "Barat",
+            "'Barat",
+            "'",
             "?",
             "Buat",
             "daftar",
@@ -134361,7 +134459,8 @@
             "yang",
             "memiliki",
             "substring",
-            "Barat",
+            "'Barat",
+            "'",
             "."
         ],
         "sql": {
@@ -134501,7 +134600,8 @@
             "namanya",
             "mengandung",
             "substring",
-            "Utara",
+            "'Utara",
+            "'",
             "?",
             "Cantumkan",
             "nama",
@@ -134647,7 +134747,8 @@
             "namanya",
             "mengandung",
             "substring",
-            "Utara",
+            "'Utara",
+            "'",
             "."
         ],
         "sql": {
@@ -138113,7 +138214,8 @@
             "yang",
             "kewarganegaraannya",
             "bukan",
-            "Prancis",
+            "\"Prancis",
+            "\"",
             "."
         ],
         "sql": {
