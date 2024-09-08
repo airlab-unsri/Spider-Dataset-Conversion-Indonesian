@@ -66,7 +66,7 @@ if __name__ == "__main__":
     os.makedirs(base_output_dir, exist_ok=True)
     
     # List of SQLite database files to process
-    database_files = ['database/aircraft/aircraft.sqlite']
+    database_files = ['database/academic/academic.sqlite']
     
     # Iterate through the database files and process them
     for db_filename in database_files:
