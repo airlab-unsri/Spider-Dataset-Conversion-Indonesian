@@ -98,7 +98,7 @@ def dump_schema_and_data(database_path, output_path, pragma=None):
                         values.append('NULL')
                 
                 values_str = ', '.join(values)
-                f.write(f"INSERT INTO {table_name} ({', '.join(columns)}) VALUES ({values_str});\n")
+                f.write(f"INSERT INTO {table_name} ({', '.join([f'`{col}`' for col in columns])}) VALUES ({values_str});\n")
             
             f.write("\n")
 
