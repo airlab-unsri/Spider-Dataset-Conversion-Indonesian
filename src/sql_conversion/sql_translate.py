@@ -29,7 +29,7 @@ def translate_word(word, translation_dict):
     Returns:
     - Translated word in lowercase if found in the dictionary, otherwise the original word in lowercase.
     """
-    return translation_dict.get(word.lower(), word.lower())  # Convert both word and its translation to lowercase
+    return translation_dict.get(word, word)  # Convert both word and its translation to lowercase
 
 def translate_sql_content(content, translation_dict):
     """
@@ -47,7 +47,7 @@ def translate_sql_content(content, translation_dict):
         return translate_word(word, translation_dict)
     
     # Use regex to replace words with their translations
-    return re.sub(r'\b[a-zA-Z_]+\b', replace_match, content)
+    return re.sub(r'[%0-9a-zA-Z_]+', replace_match, content)
 
 def process_sql_file(file_path, translation_dict, output_folder):
     """
