@@ -1,7 +1,7 @@
 import os
 import re
-import shutil
 import pandas as pd
+from concurrent.futures import ThreadPoolExecutor
 
 def load_translation_dict(csv_file_path):
     """
@@ -31,109 +31,91 @@ def translate_word(word, translation_dict):
     """
     return translation_dict.get(word.lower(), word.lower())  # Convert both word and its translation to lowercase
 
-def translate_sql_file(file_path, translation_dict):
+def translate_sql_content(content, translation_dict):
     """
-    Translates the content of an SQL file using the translation dictionary.
+    Translates SQL content using the translation dictionary.
 
     Parameters:
-    - file_path: Path to the SQL file to be translated.
+    - content: The content of the SQL file as a string.
     - translation_dict: Dictionary for translating the words.
 
     Returns:
     - Translated content as a string.
     """
+    def replace_match(match):
+        word = match.group(0)
+        return translate_word(word, translation_dict)
+    
+    # Use regex to replace words with their translations
+    return re.sub(r'\b[a-zA-Z_]+\b', replace_match, content)
+
+def process_sql_file(file_path, translation_dict, output_folder):
+    """
+    Processes a single SQL file: translates its content and saves it with a translated name.
+
+    Parameters:
+    - file_path: Path to the SQL file to be processed.
+    - translation_dict: Dictionary for translating the words.
+    - output_folder: Folder where the processed file will be saved.
+    """
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
     
-    # Use regex to find all words consisting of letters and underscores, excluding numbers
-    words = re.findall(r'\b[a-zA-Z_]+\b', content)
+    translated_content = translate_sql_content(content, translation_dict)
+
+    file_name_without_ext = os.path.splitext(os.path.basename(file_path))[0]
+    translated_file_name = translate_word(file_name_without_ext, translation_dict) + '.sql'
+    output_file_path = os.path.join(output_folder, translated_file_name)
     
-    # Replace each word in the content with its translation
-    for word in words:
-        translated_word = translate_word(word, translation_dict)
-        content = content.replace(word, translated_word)  # Replace the word with its translation
+    with open(output_file_path, 'w', encoding='utf-8') as output_file:
+        output_file.write(translated_content)
 
-    return content
-
-def translate_path(path, translation_dict):
-    """
-    Translates a path (folder or file name) by applying the translation dictionary.
-
-    Parameters:
-    - path: The original path to translate.
-    - translation_dict: Dictionary for translating the words.
-
-    Returns:
-    - Translated path with folder and file names translated accordingly.
-    """
-    # Split the path into components and translate each part
-    parts = path.split(os.sep)
-    translated_parts = [translate_word(part, translation_dict) for part in parts]
-    
-    # Reconstruct the path using the translated parts
-    return os.sep.join(translated_parts)
+    print(f"Translated and saved: {file_path} -> {output_file_path}")
 
 def translate_all_sql_files(database_folder, translation_dict, output_folder):
     """
     Translates all SQL files in the database folder using the translation dictionary.
-    Translates folder names, file names, and the contents of the SQL files, then saves the result to output_folder.
+    Also translates the folder names and file names.
 
     Parameters:
     - database_folder: The path to the folder containing .sql files.
     - translation_dict: Dictionary for translating the words.
-    - output_folder: The folder where the translated SQL files and structure will be saved.
+    - output_folder: Folder where translated SQL files will be saved.
     """
-    # Walk through all folders in the database directory
-    for root, dirs, files in os.walk(database_folder, topdown=False):
-        # Translate and copy files
-        for file in files:
-            if file.endswith('.sql'):  # Check if the file ends with .sql
-                file_path = os.path.join(root, file)
-                translated_content = translate_sql_file(file_path, translation_dict)
-                
-                # Translate the file name
-                translated_file_name = translate_word(file, translation_dict)
-                
-                # Construct the corresponding path in the output folder
-                relative_path = os.path.relpath(root, database_folder)  # Relative path from database_folder
-                translated_relative_path = translate_path(relative_path, translation_dict)  # Translate the relative path
-                output_dir = os.path.join(output_folder, translated_relative_path)  # Construct the output directory path
-                os.makedirs(output_dir, exist_ok=True)  # Create the output directory if it doesn't exist
-                
-                # Save the translated content in the new folder
-                translated_file_path = os.path.join(output_dir, translated_file_name)
-                with open(translated_file_path, 'w', encoding='utf-8') as output_file:
-                    output_file.write(translated_content)
-                
-                print(f"Translated and saved: {file_path} -> {translated_file_path}")
+    os.makedirs(output_folder, exist_ok=True)
 
-        # Translate and copy directories
-        for dir_name in dirs:
-            original_dir_path = os.path.join(root, dir_name)
-            translated_dir_name = translate_word(dir_name, translation_dict)
-            
-            # Construct the corresponding translated path in the output folder
-            relative_path = os.path.relpath(original_dir_path, database_folder)
-            translated_relative_path = translate_path(relative_path, translation_dict)
-            output_dir = os.path.join(output_folder, translated_relative_path)
-            os.makedirs(output_dir, exist_ok=True)  # Create the translated directory
-            
-            print(f"Translated directory: {original_dir_path} -> {output_dir}")
+    def process_folder(root, dirs, files):
+        # Translate folder names
+        relative_path = os.path.relpath(root, database_folder)
+        translated_folder_name = translate_word(relative_path, translation_dict)
+        output_dir = os.path.join(output_folder, translated_folder_name)
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Process each file in the folder
+        for file in files:
+            if file.endswith('.sql'):
+                file_path = os.path.join(root, file)
+                process_sql_file(file_path, translation_dict, output_dir)
+
+    # Use ThreadPoolExecutor to process files in parallel
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        for root, dirs, files in os.walk(database_folder):
+            executor.submit(process_folder, root, dirs, files)
 
 def main():
     """
     Main function to execute the translation process.
-    Defines input and output paths, translates the SQL files, and copies them to the output folder.
+    Defines input paths and translates the SQL files, folder names, and file names.
     """
     # Define path for input SQL files and output folder
     tokens_csv_path = 'data/tokens/tokens_json.csv'  # Path to the CSV file containing translation tokens
     database_folder = 'data/extracted/sql_dump/database'  # Folder containing SQL files to be translated
-    output_folder = 'data/converted/spider'  # Output folder to save translated SQL files
-    
+    output_folder = 'data/converted/spider/database'  # Output folder to save translated SQL files
+
     # Load the translation dictionary
     translation_dict = load_translation_dict(tokens_csv_path)
     
-    # Translate all SQL files and folder/file names, then save them to the output folder
+    # Translate all SQL files in the database folder and save to output_folder
     translate_all_sql_files(database_folder, translation_dict, output_folder)
 
 if __name__ == "__main__":

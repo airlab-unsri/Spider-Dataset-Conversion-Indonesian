@@ -1,4 +1,5 @@
 toks,toks_id
+name,nama
 Find the number of left handed winners who participated in the WTA Championships.,Temukan jumlah pemenang kidal yang berpartisipasi dalam Kejuaraan WTA.
 """%Latte%""","""%Latte%"""
 List all of the ids for left-footed players with a height between 180cm and 190cm.,Cantumkan semua ID untuk pemain berkaki kiri dengan tinggi antara 180cm dan 190cm.
