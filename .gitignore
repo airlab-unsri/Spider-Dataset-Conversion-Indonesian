@@ -173,6 +173,7 @@ results_without_values.sql
 dev-preprocessed.json
 
 # Converted
+data/converted/database/*
 data/converted/spider/*
 !data/converted/readme.txt
 
