@@ -149,7 +149,7 @@ if __name__ == "__main__":
         os.makedirs(os.path.dirname(output_path_2), exist_ok=True)
         
         # Dump without any PRAGMA statements
-        dump_schema_and_data(database_path, output_path_1)
+        dump_schema(database_path, output_path_1)
         dump_schema_and_data(database_path, output_path_2)
         print(f"Schema and data dumped (no PRAGMA) to {output_path_2}")
 
@@ -164,7 +164,7 @@ if __name__ == "__main__":
         os.makedirs(os.path.dirname(output_path_2), exist_ok=True)
         
         # Dump with PRAGMA foreign_keys = OFF
-        dump_schema_and_data(database_path, output_path_1, pragma_off)
+        dump_schema(database_path, output_path_1, pragma_off)
         dump_schema_and_data(database_path, output_path_2, pragma_off)
         print(f"Schema and data dumped (PRAGMA OFF) to {output_path_2}")
 
@@ -179,6 +179,6 @@ if __name__ == "__main__":
         os.makedirs(os.path.dirname(output_path_2), exist_ok=True)
         
         # Dump with PRAGMA foreign_keys = ON
-        dump_schema_and_data(database_path, output_path_1, pragma_on)
+        dump_schema(database_path, output_path_1, pragma_on)
         dump_schema_and_data(database_path, output_path_2, pragma_on)
         print(f"Schema and data dumped (PRAGMA ON) to {output_path_2}")
