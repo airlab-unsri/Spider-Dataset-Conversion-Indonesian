@@ -980,7 +980,7 @@ chinook_1,*,*,album,Album,chinook_1,*,*,album,Album
 ,postal code,PostalCode,,,,kode_pos,kode_pos,,
 ,phone,Phone,,,,telepon,telepon,,
 ,fax,Fax,,,,fax,fax,,
-,email,Email,,,,e-mail,e-mail,,
+,email,Email,,,,email,email,,
 ,support representative id,SupportRepId,,,,id_perwakilan_dukungan,id_dukunganrep,,
 ,employee id,EmployeeId,,,,id_karyawan,id_karyawan,,
 ,last name,LastName,,,,nama_belakang,nama_belakang,,
@@ -996,7 +996,7 @@ chinook_1,*,*,album,Album,chinook_1,*,*,album,Album
 ,postal code,PostalCode,,,,kode_pos,kode_pos,,
 ,phone,Phone,,,,telepon,telepon,,
 ,fax,Fax,,,,fax,fax,,
-,email,Email,,,,e-mail,e-mail,,
+,email,Email,,,,email,email,,
 ,genre id,GenreId,,,,id_genre,id_genre,,
 ,name,Name,,,,nama,nama,,
 ,invoice id,InvoiceId,,,,nomor_faktur,id_faktur,,
@@ -1137,7 +1137,7 @@ local_govt_and_lot,*,*,customers,Customers,local_govt_and_lot,*,*,pelanggan,Pela
 ,property id,property_id,organizations,Organizations,,id_properti,id_properti,organisasi,Organisasi
 ,property type code,property_type_code,services,Services,,kode_jenis_properti,kode_tipe_properti,layanan,Layanan
 ,property address,property_address,residents services,Residents_Services,,alamat_properti,properti_alamat,layanan warga,Penduduk_Layanan
-,other details,other_details,things,Things,,rincian_lainnya,detail_lainnya,hal-hal,Hal-hal
+,other details,other_details,things,Things,,rincian_lainnya,detail_lainnya,hal_hal,Hal_hal
 ,resident id,resident_id,customer events,Customer_Events,,tanda_pengenal_penduduk,id_resen,acara pelanggan,Pelanggan_Acara
 ,property id,property_id,customer event notes,Customer_Event_Notes,,id_properti,id_properti,catatan acara pelanggan,Catatan_Acara_Pelanggan
 ,date moved in,date_moved_in,timed status of things,Timed_Status_of_Things,,tanggal_pindah,tanggal_pindah_masuk,status waktunya dari suatu hal,Jangka Waktu_Status_of_Hal
@@ -1267,14 +1267,14 @@ concert_singer,*,*,stadium,stadium,konser_penyanyi,*,*,stadion,stadion
 ,capacity,Capacity,,,,kapasitas,kapasitas,,
 ,highest,Highest,,,,paling_tinggi,paling_tinggi,,
 ,lowest,Lowest,,,,terendah,terendah,,
-,average,Average,,,,rata-rata,rata-rata,,
+,average,Average,,,,rata_rata,rata_rata,,
 ,singer id,Singer_ID,,,,id_penyanyi,id_penyanyi,,
 ,name,Name,,,,nama,nama,,
 ,country,Country,,,,negara,negara,,
 ,song name,Song_Name,,,,nama_lagu,lagu_nama,,
 ,song release year,Song_release_year,,,,tahun_rilis_lagu,lagu_rilis_tahun,,
 ,age,Age,,,,usia,usia,,
-,is male,Is_male,,,,adalah_laki-laki,is_laki-laki,,
+,is male,Is_male,,,,adalah_laki_laki,is_laki_laki,,
 ,concert id,concert_ID,,,,id_konser,id_konser,,
 ,concert name,concert_Name,,,,nama_konser,konser_nama,,
 ,theme,Theme,,,,tema,tema,,
@@ -1366,12 +1366,12 @@ inn_1,*,*,rooms,Rooms,penginapan_1,*,*,kamar,Kamar
 ,code,Code,,,,kode,kode,,
 ,room,Room,,,,ruang,ruang,,
 ,check in,CheckIn,,,,check_in,lapor_masuk,,
-,check out,CheckOut,,,,memeriksa,check-out,,
+,check out,CheckOut,,,,memeriksa,check_out,,
 ,rate,Rate,,,,kecepatan,kecepatan,,
 ,last name,LastName,,,,nama_belakang,nama_belakang,,
 ,first name,FirstName,,,,nama_depan,nama_depan,,
 ,adults,Adults,,,,orang_dewasa,dewasa,,
-,kids,Kids,,,,anak-anak,anak-anak,,
+,kids,Kids,,,,anak_anak,anak_anak,,
 museum_visit,*,*,museum,museum,museum_kunjungan,*,*,museum,museum
 ,museum id,Museum_ID,customer,visitor,,id_museum,id_museum,pelanggan,pengunjung
 ,name,Name,visit,visit,,nama,nama,mengunjungi,mengunjungi
@@ -2071,7 +2071,7 @@ hospital_1,*,*,physician,Physician,rumah_sakit_1,*,*,dokter,Dokter
 ,date undergoes,DateUndergoes,,,,tanggal_mengalami,tanggal_sedang_berlangsung,,
 ,physician,Physician,,,,dokter,dokter,,
 ,assisting nurse,AssistingNurse,,,,membantu_perawat,perawat_pembantu,,
-customers_campaigns_ecommerce,*,*,premises,Premises,pelanggan_kampanye_e-niaga,*,*,tempat,Tempat
+customers_campaigns_ecommerce,*,*,premises,Premises,pelanggan_kampanye_e_niaga,*,*,tempat,Tempat
 ,premise id,premise_id,products,Products,,id_premis,id_premis,produk,Produk
 ,premises type,premises_type,customers,Customers,,tipe_tempat,tipe_tempat,pelanggan,Pelanggan
 ,premise details,premise_details,mailshot campaigns,Mailshot_Campaigns,,detail_premis,premis_detail,kampanye pengiriman surat,Mailshot_Kampanye
@@ -2120,7 +2120,7 @@ gymnast,*,*,gymnast,gymnast,pesenam,*,*,pesenam,pesenam
 ,pommel horse points,Pommel_Horse_Points,,,,poin_pukulan_kuda,pukulan_horse_points,,
 ,rings points,Rings_Points,,,,poin_cincin,cincin_titik,,
 ,vault points,Vault_Points,,,,poin_brankas,vault_points,,
-,parallel bars points,Parallel_Bars_Points,,,,titik-titik_batang_sejajar,paralel_batang_titik,,
+,parallel bars points,Parallel_Bars_Points,,,,titik_titik_batang_sejajar,paralel_batang_titik,,
 ,horizontal bar points,Horizontal_Bar_Points,,,,titik_batang_horizontal,horizontal_bar_points,,
 ,total points,Total_Points,,,,poin_total,total_poin,,
 ,people id,People_ID,,,,id_orang,id_orang,,
@@ -2997,7 +2997,7 @@ hr_1,*,*,regions,regions,jam_1,*,*,wilayah,wilayah
 ,employee id,EMPLOYEE_ID,,,,id_karyawan,id_karyawan,,
 ,first name,FIRST_NAME,,,,nama_depan,first_name,,
 ,last name,LAST_NAME,,,,nama_belakang,terakhir_name,,
-,email,EMAIL,,,,e-mail,e-mail,,
+,email,EMAIL,,,,email,email,,
 ,phone number,PHONE_NUMBER,,,,nomor_telepon,telepon_number,,
 ,hire date,HIRE_DATE,,,,tanggal_sewa,sewa_tanggal,,
 ,job id,JOB_ID,,,,id_pekerjaan,id_pekerjaan,,
@@ -3088,7 +3088,7 @@ soccer_1,*,*,player attributes,Player_Attributes,sepak_bola_1,*,*,atribut pemain
 ,buildup play dribbling class,buildUpPlayDribblingClass,,,,kelas_dribbling_permainan_penumpukan,buildupplaydribblingclass,,
 ,buildup play passing,buildUpPlayPassing,,,,penumpukan_permainan_lewat,buildupplaypassing,,
 ,buildup play passing class,buildUpPlayPassingClass,,,,membangun_kelas_passing_bermain,buildupplaypassingclass,,
-,buildup play positioning class,buildUpPlayPositioningClass,,,,kelas_pemosisian_permainan_build-up,buildupplaypositioningclass,,
+,buildup play positioning class,buildUpPlayPositioningClass,,,,kelas_pemosisian_permainan_build_up,buildupplaypositioningclass,,
 ,chance creation passing,chanceCreationPassing,,,,lewatnya_penciptaan_peluang,peluangpenciptaanpassing,,
 ,chance creation passing class,chanceCreationPassingClass,,,,kelas_kelulusan_penciptaan_peluang,peluangcreationpassingclass,,
 ,chance creation crossing,chanceCreationCrossing,,,,penyeberangan_penciptaan_peluang,peluangcreationcrossing,,
@@ -3130,7 +3130,7 @@ sakila_1,*,*,actor,actor,sakila_1,*,*,aktor,aktor
 ,store id,store_id,,,,id_toko,id_toko,,
 ,first name,first_name,,,,nama_depan,nama_depan,,
 ,last name,last_name,,,,nama_belakang,nama_belakang,,
-,email,email,,,,e-mail,e-mail,,
+,email,email,,,,email,email,,
 ,address id,address_id,,,,id_alamat,id_alamat,,
 ,active,active,,,,aktif,aktif,,
 ,create date,create_date,,,,tanggal_pembuatan,tanggal_buat,,
@@ -3183,7 +3183,7 @@ sakila_1,*,*,actor,actor,sakila_1,*,*,aktor,aktor
 ,last name,last_name,,,,nama_belakang,nama_belakang,,
 ,address id,address_id,,,,id_alamat,id_alamat,,
 ,picture,picture,,,,gambar,gambar,,
-,email,email,,,,e-mail,e-mail,,
+,email,email,,,,email,email,,
 ,store id,store_id,,,,id_toko,id_toko,,
 ,active,active,,,,aktif,aktif,,
 ,username,username,,,,nama_belakang,nama_belakang,,
@@ -3353,7 +3353,7 @@ game_injury,*,*,stadium,stadium,permainan_cedera,*,*,stadion,stadion
 ,id,id,game,game,,pengenal,pengenal,permainan,permainan
 ,name,name,injury accident,injury_accident,,nama,nama,kecelakaan cedera,cedera_kecelakaan
 ,home games,Home_Games,,,,pertandingan_kandang,beranda_permainan,,
-,average attendance,Average_Attendance,,,,kehadiran_rata-rata,rata-rata_kehadiran,,
+,average attendance,Average_Attendance,,,,kehadiran_rata_rata,rata_rata_kehadiran,,
 ,total attendance,Total_Attendance,,,,jumlah_kehadiran,total_kehadiran,,
 ,capacity percentage,Capacity_Percentage,,,,persentase_kapasitas,kapasitas_persentase,,
 ,stadium id,stadium_id,,,,id_stadion,id_stadion,,
@@ -3581,7 +3581,7 @@ store_1,*,*,sqlite sequence,artists,toko_1,*,*,urutan sqlite,seniman
 ,postal code,postal_code,,,,kode_pos,kode_pos,,
 ,phone,phone,,,,telepon,telepon,,
 ,fax,fax,,,,fax,fax,,
-,email,email,,,,e-mail,e-mail,,
+,email,email,,,,email,email,,
 ,id,id,,,,pengenal,pengenal,,
 ,first name,first_name,,,,nama_depan,nama_depan,,
 ,last name,last_name,,,,nama_belakang,nama_belakang,,
@@ -3593,7 +3593,7 @@ store_1,*,*,sqlite sequence,artists,toko_1,*,*,urutan sqlite,seniman
 ,postal code,postal_code,,,,kode_pos,kode_pos,,
 ,phone,phone,,,,telepon,telepon,,
 ,fax,fax,,,,fax,fax,,
-,email,email,,,,e-mail,e-mail,,
+,email,email,,,,email,email,,
 ,support rep id,support_rep_id,,,,id_perwakilan_dukungan,id_perwakilan_dukungan,,
 ,id,id,,,,pengenal,pengenal,,
 ,name,name,,,,nama,nama,,
@@ -3782,7 +3782,7 @@ game_1,*,*,student,Student,permainan_1,*,*,murid,Murid
 ,game type,GType,,,,jenis_permainan,tipe_g,,
 ,student id,StuID,,,,tanda_pengenal_siswa,pelajar,,
 ,game id,GameID,,,,id_permainan,id_game,,
-,hours played,Hours_Played,,,,berjam-jam_dimainkan,jam_dimainkan,,
+,hours played,Hours_Played,,,,berjam_jam_dimainkan,jam_dimainkan,,
 ,student id,StuID,,,,tanda_pengenal_siswa,pelajar,,
 ,sport name,SportName,,,,nama_olahraga,nama_olah_raga,,
 ,hours per week,HoursPerWeek,,,,jam_per_minggu,jamperminggu,,
@@ -3832,16 +3832,16 @@ bike_1,*,*,station,station,sepeda_1,*,*,stasiun,stasiun
 ,zip code,zip_code,,,,kode_pos,kode_pos,,
 ,date,date,,,,tanggal,tanggal,,
 ,max temperature f,max_temperature_f,,,,suhu_maksimal_f,suhu_maks_f,,
-,mean temperature f,mean_temperature_f,,,,suhu_rata-rata_f,rata-rata_suhu_f,,
+,mean temperature f,mean_temperature_f,,,,suhu_rata_rata_f,rata_rata_suhu_f,,
 ,min temperature f,min_temperature_f,,,,suhu_minimum_f,min_suhu_f,,
 ,max dew point f,max_dew_point_f,,,,titik_embun_maksimal_f,max_dew_point_f,,
 ,mean dew point f,mean_dew_point_f,,,,berarti_titik_embun_f,mean_dew_point_f,,
 ,min dew point f,min_dew_point_f,,,,titik_embun_minimum_f,min_dew_point_f,,
 ,max humidity,max_humidity,,,,kelembaban_maksimal,kelembaban_maks,,
-,mean humidity,mean_humidity,,,,berarti_kelembaban,rata-rata_kelembaban,,
+,mean humidity,mean_humidity,,,,berarti_kelembaban,rata_rata_kelembaban,,
 ,min humidity,min_humidity,,,,kelembaban_minimal,min_kelembaban,,
 ,max sea level pressure inches,max_sea_level_pressure_inches,,,,tekanan_permukaan_laut_maks_inci,max_sea_level_pressure_inci,,
-,mean sea level pressure inches,mean_sea_level_pressure_inches,,,,berarti_tekanan_permukaan_laut_inci,rata-rata_tingkat_laut_tekanan_inci,,
+,mean sea level pressure inches,mean_sea_level_pressure_inches,,,,berarti_tekanan_permukaan_laut_inci,rata_rata_tingkat_laut_tekanan_inci,,
 ,min sea level pressure inches,min_sea_level_pressure_inches,,,,min_tekanan_permukaan_laut_inci,min_tingkat_laut_tekanan_inci,,
 ,max visibility miles,max_visibility_miles,,,,jarak_pandang_maksimal_mil,max_visibility_miles,,
 ,mean visibility miles,mean_visibility_miles,,,,berarti_jarak_pandang_mil,mean_visibility_miles,,
@@ -4260,7 +4260,7 @@ twitter_1,*,*,follows,follows,twitter_1,*,*,berikut,berikut
 ,create date,createdate,,,,tanggal_pembuatan,dibuat,,
 ,uid,uid,,,,id_u,id_u,,
 ,name,name,,,,nama,nama,,
-,email,email,,,,e-mail,e-mail,,
+,email,email,,,,email,email,,
 ,partition id,partitionid,,,,id_partisi,id_partisi,,
 ,followers,followers,,,,pengikut,pengikut,,
 election_representative,*,*,election,election,pemilu_perwakilan,*,*,pemilihan,pemilihan
@@ -4298,7 +4298,7 @@ wedding,*,*,people,people,pernikahan,*,*,orang,orang
 ,people id,People_ID,church,church,,id_orang,id_orang,gereja,gereja
 ,name,Name,wedding,wedding,,nama,nama,pernikahan,pernikahan
 ,country,Country,,,,negara,negara,,
-,is male,Is_Male,,,,adalah_laki-laki,is_pria,,
+,is male,Is_Male,,,,adalah_laki_laki,is_pria,,
 ,age,Age,,,,usia,usia,,
 ,church id,Church_ID,,,,id_gereja,id_gereja,,
 ,name,Name,,,,nama,nama,,
@@ -4306,7 +4306,7 @@ wedding,*,*,people,people,pernikahan,*,*,orang,orang
 ,open date,Open_Date,,,,tanggal_terbuka,tanggal_buka,,
 ,continuation of,Continuation_of,,,,kelanjutan_dari,lanjutan_of,,
 ,church id,Church_ID,,,,id_gereja,id_gereja,,
-,male id,Male_ID,,,,id_laki-laki,id_pria,,
+,male id,Male_ID,,,,id_laki_laki,id_pria,,
 ,female id,Female_ID,,,,id_perempuan,id_wanita,,
 ,year,Year,,,,tahun,tahun,,
 news_report,*,*,event,event,berita_laporan,*,*,peristiwa,peristiwa
@@ -4407,7 +4407,7 @@ school_player,*,*,school,school,sekolah_pemain,*,*,sekolah,sekolah
 ,enrollment,Enrollment,,,,pendaftaran,pendaftaran,,
 ,founded,Founded,,,,id_dirikan,id_dirikan,,
 ,denomination,Denomination,,,,denominasi,denominasi,,
-,boys or girls,Boys_or_Girls,,,,laki-laki_atau_perempuan,laki-laki_atau_perempuan,,
+,boys or girls,Boys_or_Girls,,,,laki_laki_atau_perempuan,laki_laki_atau_perempuan,,
 ,day or boarding,Day_or_Boarding,,,,hari_atau_asrama,hari_atau_boarding,,
 ,year entered competition,Year_Entered_Competition,,,,tahun_memasuki_kompetisi,tahun_memasuki_kompetisi,,
 ,school colors,School_Colors,,,,warna_sekolah,sekolah_warna,,

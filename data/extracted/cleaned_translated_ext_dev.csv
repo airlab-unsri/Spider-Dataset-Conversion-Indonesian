@@ -9678,7 +9678,7 @@ museum_visit,What are the opening year and staff number of the museum named Plaz
 ,,WHERE,where,,,,WHERE,where,
 ,,name,name,,,,nama,nama,
 ,,=,=,,,,=,=,
-,,Plaza,value,,,,alun-alun,value,
+,,Plaza,value,,,,alun_alun,value,
 ,,Museum,,,,,Museum,,
 ,,,,,,,,,
 museum_visit,find the names of museums which have more staff than the minimum staff number of all museums opened after 2010.,SELECT,select,,museum_kunjungan,temukan nama-nama museum yang memiliki staf lebih banyak dari jumlah staf minimum dari semua museum yang dibuka setelah tahun 2010.,SELECT,select,
