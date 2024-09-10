@@ -10784,7 +10784,7 @@
             ],
             [
                 2,
-                "e-mail"
+                "email"
             ],
             [
                 2,
@@ -10848,7 +10848,7 @@
             ],
             [
                 3,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -11046,7 +11046,7 @@
             ],
             [
                 2,
-                "e-mail"
+                "email"
             ],
             [
                 2,
@@ -11110,7 +11110,7 @@
             ],
             [
                 3,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -13073,7 +13073,7 @@
             "organisasi",
             "layanan",
             "layanan warga",
-            "hal-hal",
+            "hal_hal",
             "acara pelanggan",
             "catatan acara pelanggan",
             "status waktunya dari suatu hal",
@@ -13086,7 +13086,7 @@
             "Organisasi",
             "Layanan",
             "Penduduk_Layanan",
-            "Hal-hal",
+            "Hal_hal",
             "Pelanggan_Acara",
             "Catatan_Acara_Pelanggan",
             "Jangka Waktu_Status_of_Hal",
@@ -13990,7 +13990,7 @@
             ],
             [
                 0,
-                "rata-rata"
+                "rata_rata"
             ],
             [
                 1,
@@ -14018,7 +14018,7 @@
             ],
             [
                 1,
-                "adalah_laki-laki"
+                "adalah_laki_laki"
             ],
             [
                 2,
@@ -14080,7 +14080,7 @@
             ],
             [
                 0,
-                "rata-rata"
+                "rata_rata"
             ],
             [
                 1,
@@ -15085,7 +15085,7 @@
             ],
             [
                 1,
-                "anak-anak"
+                "anak_anak"
             ]
         ],
         "column_names_original": [
@@ -15135,7 +15135,7 @@
             ],
             [
                 1,
-                "check-out"
+                "check_out"
             ],
             [
                 1,
@@ -15155,7 +15155,7 @@
             ],
             [
                 1,
-                "anak-anak"
+                "anak_anak"
             ]
         ],
         "column_types": [
@@ -22761,7 +22761,7 @@
             "time",
             "text"
         ],
-        "db_id": "pelanggan_kampanye_e-niaga",
+        "db_id": "pelanggan_kampanye_e_niaga",
         "foreign_keys": [
             [
                 20,
@@ -22848,7 +22848,7 @@
             ],
             [
                 0,
-                "titik-titik_batang_sejajar"
+                "titik_titik_batang_sejajar"
             ],
             [
                 0,
@@ -32481,7 +32481,7 @@
             ],
             [
                 4,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -32627,7 +32627,7 @@
             ],
             [
                 4,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -33091,7 +33091,7 @@
             ],
             [
                 6,
-                "kelas_pemosisian_permainan_build-up"
+                "kelas_pemosisian_permainan_build_up"
             ],
             [
                 6,
@@ -33751,7 +33751,7 @@
             ],
             [
                 5,
-                "e-mail"
+                "email"
             ],
             [
                 5,
@@ -33963,7 +33963,7 @@
             ],
             [
                 14,
-                "e-mail"
+                "email"
             ],
             [
                 14,
@@ -34113,7 +34113,7 @@
             ],
             [
                 5,
-                "e-mail"
+                "email"
             ],
             [
                 5,
@@ -34325,7 +34325,7 @@
             ],
             [
                 14,
-                "e-mail"
+                "email"
             ],
             [
                 14,
@@ -36316,7 +36316,7 @@
             ],
             [
                 0,
-                "kehadiran_rata-rata"
+                "kehadiran_rata_rata"
             ],
             [
                 0,
@@ -36402,7 +36402,7 @@
             ],
             [
                 0,
-                "rata-rata_kehadiran"
+                "rata_rata_kehadiran"
             ],
             [
                 0,
@@ -38692,7 +38692,7 @@
             ],
             [
                 3,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -38740,7 +38740,7 @@
             ],
             [
                 4,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -38962,7 +38962,7 @@
             ],
             [
                 3,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -39010,7 +39010,7 @@
             ],
             [
                 4,
-                "e-mail"
+                "email"
             ],
             [
                 4,
@@ -40866,7 +40866,7 @@
             ],
             [
                 2,
-                "berjam-jam_dimainkan"
+                "berjam_jam_dimainkan"
             ],
             [
                 3,
@@ -41334,7 +41334,7 @@
             ],
             [
                 3,
-                "suhu_rata-rata_f"
+                "suhu_rata_rata_f"
             ],
             [
                 3,
@@ -41524,7 +41524,7 @@
             ],
             [
                 3,
-                "rata-rata_suhu_f"
+                "rata_rata_suhu_f"
             ],
             [
                 3,
@@ -41548,7 +41548,7 @@
             ],
             [
                 3,
-                "rata-rata_kelembaban"
+                "rata_rata_kelembaban"
             ],
             [
                 3,
@@ -41560,7 +41560,7 @@
             ],
             [
                 3,
-                "rata-rata_tingkat_laut_tekanan_inci"
+                "rata_rata_tingkat_laut_tekanan_inci"
             ],
             [
                 3,
@@ -46067,7 +46067,7 @@
             ],
             [
                 2,
-                "e-mail"
+                "email"
             ],
             [
                 2,
@@ -46117,7 +46117,7 @@
             ],
             [
                 2,
-                "e-mail"
+                "email"
             ],
             [
                 2,
@@ -46549,7 +46549,7 @@
             ],
             [
                 0,
-                "adalah_laki-laki"
+                "adalah_laki_laki"
             ],
             [
                 0,
@@ -46581,7 +46581,7 @@
             ],
             [
                 2,
-                "id_laki-laki"
+                "id_laki_laki"
             ],
             [
                 2,
@@ -47713,7 +47713,7 @@
             ],
             [
                 0,
-                "laki-laki_atau_perempuan"
+                "laki_laki_atau_perempuan"
             ],
             [
                 0,
@@ -47823,7 +47823,7 @@
             ],
             [
                 0,
-                "laki-laki_atau_perempuan"
+                "laki_laki_atau_perempuan"
             ],
             [
                 0,

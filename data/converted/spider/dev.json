@@ -58633,7 +58633,7 @@
     },
     {
         "db_id": "museum_kunjungan",
-        "query": "SELECT Jumlah_Staf , Buka_Tahun FROM museum WHERE nama = 'alun-alun Museum'",
+        "query": "SELECT Jumlah_Staf , Buka_Tahun FROM museum WHERE nama = 'alun_alun Museum'",
         "query_toks": [
             "SELECT",
             "Jumlah_Staf",
@@ -58644,7 +58644,7 @@
             "WHERE",
             "nama",
             "=",
-            "'alun-alun",
+            "'alun_alun",
             "Museum",
             "'"
         ],

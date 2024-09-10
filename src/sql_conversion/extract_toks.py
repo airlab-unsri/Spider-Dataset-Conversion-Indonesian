@@ -135,13 +135,13 @@ def process_files():
         'cleaned_translated_tables.csv'
     ]
     
-    input_dir = os.path.join(script_dir, '../data/extracted/')
-    output_path = os.path.join(script_dir, '../data/tokens/tokens.csv')  # Single output file
+    input_dir = os.path.join(script_dir, '../../data/extracted/')
+    output_path = os.path.join(script_dir, '../../data/tokens/tokens_json.csv')  # Single output file
     
     # Ensure the output directory exists
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    sql_keywords = load_sql_keywords(os.path.join(script_dir, '../data/sql_keywords.txt'))
+    sql_keywords = load_sql_keywords(os.path.join(script_dir, '../../data/sql_keywords.txt'))
 
     # Set to store all tokens (no duplicates)
     all_tokens = set()
