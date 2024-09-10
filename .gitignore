@@ -183,6 +183,8 @@ data/converted/spider/*
 !data/converted/spider/train.json
 !data/converted/spider/train_spider.json
 !data/converted/spider/train_others.json
+!data/converted/spider/dev_gold.sql
+!data/converted/spider/train_gold.sql
 
 # Extracted
 data/extracted/*
