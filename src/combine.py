@@ -3,7 +3,7 @@ import json
 
 # Set up paths
 script_dir = os.path.dirname(os.path.abspath(__file__))
-input_dir = os.path.join(script_dir, '../data/converted/spider/')
+input_dir = os.path.join(script_dir, '../data/converted/idspider/')
 output_path = os.path.join(input_dir, 'train.json')
 
 # Load JSON file

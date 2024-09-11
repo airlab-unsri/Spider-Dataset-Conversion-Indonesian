@@ -11,7 +11,7 @@ input_paths = {
     'train_others.json': '../data/extracted/cleaned_translated_ext_train_others.csv',
     'train_spider.json': '../data/extracted/cleaned_translated_ext_train_spider.csv'
 }
-output_dir = os.path.join(script_dir, '../data/converted/spider/')
+output_dir = os.path.join(script_dir, '../data/converted/idspider/')
 os.makedirs(output_dir, exist_ok=True)
 
 def load_translation_mappings_table(csv_path):

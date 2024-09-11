@@ -72,11 +72,11 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Define the input and output base directories
-    input_base_dir = os.path.join(script_dir, '../../data/converted/spider/database/')
-    output_base_dir = os.path.join(script_dir, '../../data/converted/spider/database/')
+    input_base_dir = os.path.join(script_dir, '../../data/converted/idspider/database/')
+    output_base_dir = os.path.join(script_dir, '../../data/converted/idspider/database/')
     
     # input_base_dir = os.path.join(script_dir, '../../data/extracted/sql_dump/database-id/')
-    # output_base_dir = os.path.join(script_dir, '../../data/converted/spider-en/database/')
+    # output_base_dir = os.path.join(script_dir, '../../data/converted/idspider-en/database/')
     
     # Process the SQL files
     process_sql_files(input_base_dir, output_base_dir)

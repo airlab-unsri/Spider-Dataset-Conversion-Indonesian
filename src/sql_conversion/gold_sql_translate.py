@@ -81,8 +81,8 @@ def main():
         'dev.json': 'dev_gold.sql'
     }
 
-    input_dir = os.path.join(script_dir, '../../data/converted/spider/')  # Directory containing the input JSON files
-    output_dir = os.path.join(script_dir, '../../data/converted/spider/')  # Directory to save the output SQL files
+    input_dir = os.path.join(script_dir, '../../data/converted/idspider/')  # Directory containing the input JSON files
+    output_dir = os.path.join(script_dir, '../../data/converted/idspider/')  # Directory to save the output SQL files
 
     # Ensure the output directory exists, create it if not
     os.makedirs(output_dir, exist_ok=True)

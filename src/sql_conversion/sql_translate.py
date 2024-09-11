@@ -110,7 +110,7 @@ def main():
     # Define path for input SQL files and output folder
     tokens_csv_path = 'data/tokens/tokens_json.csv'  # Path to the CSV file containing translation tokens
     database_folder = 'data/extracted/sql_dump/database'  # Folder containing SQL files to be translated
-    output_folder = 'data/converted/spider/database'  # Output folder to save translated SQL files
+    output_folder = 'data/converted/idspider/database'  # Output folder to save translated SQL files
 
     # Load the translation dictionary
     translation_dict = load_translation_dict(tokens_csv_path)

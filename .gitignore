@@ -174,17 +174,17 @@ dev-preprocessed.json
 
 # Converted
 data/converted/database/*
-data/converted/spider/*
+data/converted/idspider/*
 !data/converted/readme.txt
 
 # Push Converted Datasets
-!data/converted/spider/dev.json
-!data/converted/spider/tables.json
-!data/converted/spider/train.json
-!data/converted/spider/train_spider.json
-!data/converted/spider/train_others.json
-!data/converted/spider/dev_gold.sql
-!data/converted/spider/train_gold.sql
+!data/converted/idspider/dev.json
+!data/converted/idspider/tables.json
+!data/converted/idspider/train.json
+!data/converted/idspider/train_spider.json
+!data/converted/idspider/train_others.json
+!data/converted/idspider/dev_gold.sql
+!data/converted/idspider/train_gold.sql
 
 # Extracted
 data/extracted/*
